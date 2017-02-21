@@ -1,0 +1,116 @@
+var gulp = require('gulp'),
+    runSequence = require('run-sequence'),
+    browserSync = require('browser-sync').create(),
+    del = require('del'),
+    compass = require('gulp-compass'),
+    ngAnnotate = require('gulp-ng-annotate'),
+    ngmin = require('gulp-ngmin'),
+    stripDebug = require('gulp-strip-debug'),
+    concat = require('gulp-concat'),
+    minifyCss = require('gulp-minify-css'), //压缩css
+    rename = require('gulp-rename'),
+    uglify = require('gulp-uglify'),
+    jshint = require('gulp-jshint'),
+    autoprefixer = require('gulp-autoprefixer');
+
+gulp.task('default', ['jshint'], function() {
+    gulp.start('minifyjs');
+    return runSequence(['clean'], ['build'], ['serve', 'watch']);
+});
+
+gulp.task('clean', function(callback) {
+    return del('./dist/', callback);
+});
+
+gulp.task('build', function(callback) {
+    return runSequence(['compass', 'staticFiles'], callback);
+});
+
+gulp.task('compass', function() {
+    return gulp.src('./src/**/*.scss')
+        .pipe(compass({
+            config_file: './config.rb',
+            css: 'src/stylesheets',
+            sass: 'src/sass'
+        }))
+        .on('error', function(err) {
+            console.log(err);
+            this.emit('end');
+        })
+        .pipe(gulp.dest('./dist/stylesheets/'))
+        .pipe(rename({ suffix: '.min' }))
+        //压缩样式文件
+        .pipe(minifyCss({ outSourceMap: false }))
+        //输出压缩文件到指定目录
+        .pipe(gulp.dest('./dist/stylesheets/'));
+});
+
+// gulp.task('testAutoFx', function() {
+//     gulp.src('src/stylesheets/main.css')
+//         .pipe(autoprefixer({
+//             browsers: ['last 2 versions', 'Android >= 4.0'],
+//  cascade: true, //是否美化属性值 默认：true 像这样：
+//-webkit-transform: rotate(45deg);
+//        transform: rotate(45deg);
+// remove: true //是否去掉不必要的前缀 默认：true 
+//         }))
+//         .pipe(gulp.dest('./dist/stylesheets/'));
+// });
+
+//合并压缩js
+gulp.task('minifyjs', function() {
+    return gulp.src('./src/javascripts*/**/*.js') //js代码校验
+        .pipe(concat('main.js')) //js代码合并 main.js
+        .pipe(gulp.dest('./dist/javascripts/')) //整合后的输出路径
+        .pipe(rename({ suffix: '.min' })) ////给文件添加.min后缀
+        .pipe(ngAnnotate())
+        .pipe(ngmin({ dynamic: false })) //Pre-minify AngularJS apps with ngmin
+        .pipe(stripDebug()) //除去js代码中的console和debugger输出
+        .pipe(uglify({ outSourceMap: false })) //压缩脚本文件
+        .pipe(gulp.dest('./dist/javascripts/')); //输出压缩文件到指定目录
+});
+
+gulp.task('jshint', function() {
+    return gulp.src('./src/javascripts/**/*.js')
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
+});
+
+gulp.task('staticFiles', function() {
+    return gulp.src([
+            './src/**/*.html',
+            './src/images*/**/*.*',
+            './src/javascripts*/**/*.js',
+            './src/stylesheets*/**/*.css'
+        ])
+        .pipe(gulp.dest('./dist/'));
+})
+
+gulp.task('serve', function() {
+    browserSync.init({
+        server: './dist',
+        port: 8888
+    });
+});
+
+gulp.task('reload', function() {
+    return browserSync.reload();
+});
+
+gulp.task('watch', function() {
+    return gulp.watch([
+        './src/**/*.html',
+        './src/**/*.scss',
+        './src/**/*.js'
+    ], function() {
+        return runSequence(['build'], ['reload'], ['minifyjs']);
+    })
+});
+
+
+/**
+ * task这个API用来创建任务，在命令行下可以输入 gulp test 来执行test的任务。
+ * watch这个API用来监听任务。
+ * src这个API设置需要处理的文件的路径，可以是多个文件以数组的形式[main.scss, vender.scss]，也可以是正则表达式/** /*.scss。
+ * dest这个API设置生成文件的路径，一个任务可以有多个生成路径，一个可以输出未压缩的版本，另一个可以输出压缩后的版本。
+ */

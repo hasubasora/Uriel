@@ -1,0 +1,68 @@
+@charset "UTF-8";
+.box {
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+.abox {
+    @include height;
+}
+
+.btn {
+    @include btn;
+    font-size: 1rem;
+    margin-right: 2rem;
+    @include c3(border-radius, 4px);
+}
+
+.btn-success {
+    @include btn-success;
+}
+
+.btn-info {
+    @include btn-info;
+}
+
+.text {
+    @include text;
+    margin-right: 1rem;
+    @include c3(border-radius, 4px);
+    border: 1px solid #ccc;
+}
+
+.Ubox {
+    @include clearfix;
+    li {
+        cursor: pointer;
+        //border:1px solid red;
+        @include span(4);
+        // padding: 0 30px;
+        float: left;
+        @include height;
+        padding-right: 100px;
+        // border: 1px solid red;
+    }
+}
+
+.background {
+    background: rgb(237, 243, 249);
+}
+
+.jian {
+    color: red;
+}
+
+.jia {
+    color: green;
+}
+
+.boxbtn {
+    margin-top: 60px;
+    transform: rotate(45deg);
+     transform: rotate(435deg);
+}
+
+@keyframes onr {
+from{ left: 0;}
+to{left: -440px}
+}
