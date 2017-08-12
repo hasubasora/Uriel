@@ -5,83 +5,45 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
     <script type="text/javascript" src="framework/vue.js"></script>
     <script type="text/javascript" src="framework/jquery.1.11.1.min.js"></script>
-    <script src="javascripts/app.js"></script>
-    <title>vuejs</title>
+    <script src="framework/three.min.js"></script>
+    <title>three</title>
     <script>
         window.onload = function() {
-            var agumon = new Vue({
-                el: '#app', //id 在这个盒子里面才能操作下面的东西
-                data: { //数据
-                    message: 'Hello Vue!',
-                    msg: '哈哈哈',
-                    msg1: false,
-                    arr: ['blue', 'red', 'yellow', 'green'],
-                    json: {
-                        a: 'apple',
-                        b: 'banner',
-                        c: 'corll'
-                    },
-                    json2: {
-                        a: '动物',
-                        b: '猫',
-                        c: '狗'
-                    },
-                    todos: [{
-                        text: 'Learn JavaScript'
-                    }, {
-                        text: 'Learn Vue'
-                    }, {
-                        text: 'Build something awesome'
-                    }]
+            // 创建场景元素
+            const scene = new THREE.Scene();
 
-                },
-                methods: { //事件操作
-                    add: function() {
-                        this.arr.push('message');
-                    }
-                }
-            })
+            // 创建网个模型
+            const geometry = new THREE.BoxGeometry(100, 100, 100); //长宽高 几何对象
+            const material = new THREE.MeshLambertMaterial({
+                color: 0xff0000
+            }); //颜色 材质对象
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh); // 加入到场景
+
+            // 添加灯光
+            const Light = new THREE.PointLight(0xffffff); // 点光源
+            Light.position.set(300, 400, 200);
+            scene.add(Light); //添加灯光进去
+
+            // 添加相机
+            const camera = new THREE.PerspectiveCamera(40, 800 / 600, 1, 1000);
+            camera.position.set(200, 200, 200); //相机位置
+            camera.lookAt(scene.position); //向着场景中心
+
+            // 创建渲染器
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(800, 600); // 渲染器尺寸
+            document.body.appendChild(renderer.domElement) // 加入文档
+
+            // 渲染
+            renderer.render(scene, camera); //传入场景和相机
         }
     </script>
 </head>
 
 <body>
     <div id="app">
-        <input type="text" v-model='message'> <br>{{ message }}<br>
-        <input type="text" v-model='msg'>
-        <br> {{msg}}
-        <br> {{msg1}}
-        <br> {{arr}}
-        <br> {{json}}
-        <br>
-        <!--循环-->
-        <ul>
-            <li v-for="values in arr">
-                {{values}}
-                <!--{{$index}} 已废除-->
-            </li>
-        </ul>
-        <br>
-        <ul>
-            <li v-for="infos in json">
-                {{infos}}
-            </li>
-        </ul>
-        <br>
-        <ul>
-            <li v-for="(k,v) in json2">
-                {{v}} {{k}}
-            </li>
-        </ul>
-
-        <!--点击按钮事件-->
-        <input type="button" value="点我" v-on:click="add()">
-
-        <!--点击隐藏显示 v-show="true/false"  点击按钮把data里面的变量改变就可以-->
-        <input type="button" value="显示" v-on:click="msg1=true">
-        <div v-show="msg1" style="border:1px solid red; width:30px;height:30px;"></div>
     </div>
-
 </body>
 
 
