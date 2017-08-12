@@ -38,6 +38,26 @@ gulp.task('compass', function() {
             this.emit('end');
         })
         .pipe(gulp.dest('./dist/stylesheets/'))
+        .pipe(autoprefixer({
+            browsers: [
+                'last 22 versions',
+                'Android >= 4.0',
+                'last 5 Chrome versions',
+                'last 5 Explorer versions',
+                'last 3 Safari versions',
+                'Firefox >= 20',
+                'iOS 7',
+                'Firefox ESR',
+                'Explorer >= 8',
+                'Opera >= 42',
+                'Safari >= 8',
+                'last 5 FirefoxAndroid versions',
+                'last 5 ChromeAndroid versions',
+                'last 5 ExplorerMobile versions'
+            ],
+            cascade: false
+        }))
+        .pipe(gulp.dest('./dist/stylesheets/'))
         .pipe(rename({ suffix: '.min' }))
         //压缩样式文件
         .pipe(minifyCss({ outSourceMap: false }))
@@ -81,7 +101,8 @@ gulp.task('staticFiles', function() {
             './src/**/*.html',
             './src/images*/**/*.*',
             './src/javascripts*/**/*.js',
-            './src/stylesheets*/**/*.css'
+            './src/stylesheets*/**/*.css',
+            './src/framework*/*.*'
         ])
         .pipe(gulp.dest('./dist/'));
 })
