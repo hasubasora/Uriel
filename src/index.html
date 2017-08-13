@@ -4,46 +4,81 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
     <script type="text/javascript" src="framework/jquery.1.11.1.min.js"></script>
-    <script src="framework/three.min.js"></script>
-    <title>three</title>
-    <script>
-        window.onload = function() {
-            // 创建场景元素
-            const scene = new THREE.Scene();
-
-            // 创建网个模型
-            const geometry = new THREE.BoxGeometry(100, 100, 100); //长宽高 几何对象
-            const material = new THREE.MeshLambertMaterial({
-                color: 0xff0000
-            }); //颜色 材质对象
-            const mesh = new THREE.Mesh(geometry, material);
-            scene.add(mesh); // 加入到场景
-
-            // 添加灯光
-            const Light = new THREE.PointLight(0xffffff); // 点光源
-            Light.position.set(300, 400, 200);
-            scene.add(Light); //添加灯光进去
-
-            // 添加相机
-            const camera = new THREE.PerspectiveCamera(40, 800 / 600, 1, 1000);
-            camera.position.set(200, 200, 200); //相机位置
-            camera.lookAt(scene.position); //向着场景中心
-
-            // 创建渲染器
-            const renderer = new THREE.WebGLRenderer();
-            renderer.setSize(800, 600); // 渲染器尺寸
-            document.body.appendChild(renderer.domElement) // 加入文档
-
-            // 渲染
-            renderer.render(scene, camera); //传入场景和相机
+    <script src="framework/three.js"></script>
+    <!-- 相机控制器 -->
+    <script src="framework/OrbitControls.js"></script>
+    <title>天空盒</title>
+    <style>
+        .box {
+            position: fixed;
+            left: 0;
+            bottom: 50px;
+            border: 1px solid red;
+            width: 100%;
+            height: 100px;
         }
-    </script>
+    </style>
 </head>
 
 <body>
-    <div id="app">
-    </div>
+    <div class="box"></div>
+    <div id="container"> </div>
 </body>
+<script>
+    window.onload = function() {
+        var material
+            // 创建场景元素
+        var scene = new THREE.Scene();
+        var group = new THREE.Group();
 
+        // 创建网个模型
+        var geometry = new THREE.BoxGeometry(100, 100, 100); //长宽高 几何对象
+        var loader = new THREE.TextureLoader();
+        loader.load('images/px.jpg', function(texture) {
+            // var geometry = new THREE.SphereGeometry(200, 20, 20);
+            var material = new THREE.MeshBasicMaterial({
+                map: texture,
+                overdraw: 0.5
+            });
+            // 模型
+            var mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh); // 加入到场景
+        });
+
+
+
+        // 添加灯光
+        var Light = new THREE.PointLight(0xffffff); // 点光源
+        Light.position.set(300, 400, 200);
+        scene.add(Light); //添加灯光进去
+
+        //加入一个环境光
+        scene.add(new THREE.AmbientLight(0x333333));
+
+        // 添加相机
+        var camera = new THREE.PerspectiveCamera(40, 800 / 600, 1, 2000);
+        camera.position.set(200, 200, 200); //相机位置
+        camera.lookAt(scene.position); //向着场景中心
+
+        // 创建渲染器
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize(800, 600); // 渲染器尺寸
+        document.body.appendChild(renderer.domElement) // 加入文档
+
+        // 渲染
+        function render() {
+            renderer.render(scene, camera); //传入场景和相机
+        }
+        render();
+
+        // 创建相机控制器，需要引入库  传入对象
+        var controls = new THREE.OrbitControls(camera); //传入这个相机，鼠标操作的时候相机控制器会改变相机的参数
+        // 加入事件监听处理
+        controls.addEventListener('change', render); //改变参数之后同时渲染场景
+
+
+
+    }
+</script>
 
 </html>

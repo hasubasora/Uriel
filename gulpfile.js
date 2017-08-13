@@ -102,7 +102,7 @@ gulp.task('staticFiles', function() {
             './src/images*/**/*.*',
             './src/javascripts*/**/*.js',
             './src/stylesheets*/**/*.css',
-            './src/framework*/*.*'
+            './src/framework*/**/*.*'
         ])
         .pipe(gulp.dest('./dist/'));
 })
