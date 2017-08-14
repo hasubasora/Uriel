@@ -1,20 +1,22 @@
+'use strict';
+
 var keyControl = {
     //手机部分显示错误信息的id
-    numKey: function(t) {
+    numKey: function numKey(t) {
         t.value = t.value.replace(/[^\d]/g, '');
     },
     //有小数点
-    flostKey: function(t) {
+    flostKey: function flostKey(t) {
         t.value = t.value.replace(/[^\d\.]/g, '').replace(/^[^\d]/g, '');
     },
     //匹配0开头跟随的数字
-    zeroKey: function(t) {
+    zeroKey: function zeroKey(t) {
         t.value = t.value.replace(/^0(?=[0-9])/, '');
     },
     //只能存在一个.
     dotId: "",
     dotError: '输入正确规则数字...',
-    oneKey: function(t) {
+    oneKey: function oneKey(t) {
         var one = t.value.search(/[\.]/g),
             two = t.value.lastIndexOf('.');
         if (one != two) id(keyControl.dotId).innerHTML = keyControl.dotError;
@@ -23,7 +25,7 @@ var keyControl = {
     telId: '',
     telError: '×手机号不正确...',
     telNight: '√手机号正确',
-    telKey: function(t) {
+    telKey: function telKey(t) {
         var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
         if (!reg.test(t.value)) {
             console.log('输入正确手机号');
@@ -33,7 +35,7 @@ var keyControl = {
             id(keyControl.telid).innerHTML = keyControl.telNight;
         }
     },
-    id: function(obj) {
+    id: function id(obj) {
         return document.getElementById(obj);
     },
     //长度
@@ -42,50 +44,50 @@ var keyControl = {
     maxStr: '超过最大限制',
     minStr: '最少输入几位数',
     strId: "",
-    strLength: function(t) {
+    strLength: function strLength(t) {
         console.log(keyControl.maxStr);
-        if (t.value.length >= keyControl.maxLength) { //超过最大限制
+        if (t.value.length >= keyControl.maxLength) {
+            //超过最大限制
             id(keyControl.strId).innerHTML = keyControl.maxStr;
             return false;
-        } else if (t.value.length <= keyControl.minLength) { //最小限制
+        } else if (t.value.length <= keyControl.minLength) {
+            //最小限制
             id(keyControl.strId).innerHTML = keyControl.minStr;
             return false;
         } else {
             id(keyControl.strId).innerHTML = '';
         }
     },
-    successColor: function() {},
-    errorColor: function() {},
+    successColor: function successColor() {},
+    errorColor: function errorColor() {},
     //倒计时60秒
     setTimeBtn: '',
     setTime: 60,
-    timeSix: function() {
-        var timer = setInterval(function() {
-                if (keyControl.setTime > 0) {
-                    id(keyControl.setTimeBtn).setAttribute("disabled", "disabled");
-                    id(keyControl.setTimeBtn).value = "(" + keyControl.setTime + ")重新获取";
-                    keyControl.setTime--;
-                } else {
-                    clearInterval(timer);
-                    id(keyControl.setTimeBtn).removeAttribute("disabled");
-                    id(keyControl.setTimeBtn).value = "获取验证码";
-                    keyControl.setTime = 60;
-                }
-            },
-            1000);
+    timeSix: function timeSix() {
+        var timer = setInterval(function () {
+            if (keyControl.setTime > 0) {
+                id(keyControl.setTimeBtn).setAttribute("disabled", "disabled");
+                id(keyControl.setTimeBtn).value = "(" + keyControl.setTime + ")重新获取";
+                keyControl.setTime--;
+            } else {
+                clearInterval(timer);
+                id(keyControl.setTimeBtn).removeAttribute("disabled");
+                id(keyControl.setTimeBtn).value = "获取验证码";
+                keyControl.setTime = 60;
+            }
+        }, 1000);
     },
     //密码对比
     identicalTwo: '', //第二个密码的ID
     identicalError: '', //显示错误的ID
-    identical: function(t) {
+    identical: function identical(t) {
         if (t.value != id(keyControl.identicalTwo).value) {
             id(keyControl.identicalError).value = "密码不一致";
         } else {
             id(keyControl.identicalError).value = "";
         }
-    },
+    }
 };
-
 
 function Agumon() {
     this.erId = ''; //输出的错误ID
@@ -98,11 +100,14 @@ function Agumon() {
     this.dotError = '输入正确规则数字...';
 }
 Agumon.prototype = {
-    strLength: function(t) { //长短限制
-        if (t.value.length >= this.maxLength) { //超过最大限制
+    strLength: function strLength(t) {
+        //长短限制
+        if (t.value.length >= this.maxLength) {
+            //超过最大限制
             id(this.erId).innerHTML = this.maxError;
             return false;
-        } else if (t.value.length <= this.minLength) { //最小限制
+        } else if (t.value.length <= this.minLength) {
+            //最小限制
             id(this.erId).innerHTML = this.minError;
             return false;
         } else {
@@ -110,7 +115,8 @@ Agumon.prototype = {
             return true;
         }
     },
-    ploneKey: function(t) { // 手机号判断
+    ploneKey: function ploneKey(t) {
+        // 手机号判断
         if (!this.reg.test(t.value)) {
             console.log('输入正确手机号');
             id(this.erId).innerHTML = this.minError; //错
@@ -120,43 +126,48 @@ Agumon.prototype = {
             return true;
         }
     },
-    oneKey: function(t) { // 小数点和数字
+    oneKey: function oneKey(t) {
+        // 小数点和数字
         var one = t.value.search(/[\.]/g),
             two = t.value.lastIndexOf('.');
         if (one != two) id(this.erId).innerHTML = this.dotError;
     },
     //手机部分显示错误信息的id
-    numKey: function(t) {
+    numKey: function numKey(t) {
         t.value = t.value.replace(/[^\d]/g, '');
     },
-    flostKey: function(t) { //有小数点
+    flostKey: function flostKey(t) {
+        //有小数点
         t.value = t.value.replace(/[^\d\.]/g, '').replace(/^[^\d]/g, '');
     },
-    zeroKey: function(t) { //匹配0开头跟随的数字
+    zeroKey: function zeroKey(t) {
+        //匹配0开头跟随的数字
         t.value = t.value.replace(/^0(?=[0-9])/, '');
     },
-    ltrim: function(str) {
+    ltrim: function ltrim(str) {
         return str.replace(/(^\s*)/g, '');
     },
-    rtrim: function(str) {
+    rtrim: function rtrim(str) {
         return str.replace(/(\s*$)/g, '');
     },
-    trim: function(str) {
+    trim: function trim(str) {
         return str.replace(/(^\s*)|(\s*$)/g, '');
     }
 
 };
 var agumon = new Agumon();
+'use strict';
+
 function fn(id1, id2) {
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (e.target !== id1) {
             id2.style.display = "none";
         }
     });
-    id2.addEventListener('click', function(e) {
+    id2.addEventListener('click', function (e) {
         e.stopPropagation();
     });
-    id1.addEventListener('click', function(e) {
+    id1.addEventListener('click', function (e) {
         var status = id2.style.display;
         if (status === "none") {
             id2.style.display = "block";
@@ -166,7 +177,9 @@ function fn(id1, id2) {
     });
 }
 fn(btn, div);
-
+"use strict";
+"use strict";
+"use strict";
 
 /**
  * last month chenyongh 2016年12月24日14:31:55
@@ -174,20 +187,12 @@ fn(btn, div);
 var month = {
     filter: {},
     DataTables: "",
-    init: function() {
+    init: function init() {
         _this = this;
-        $(".addAccount").on('click', function() {
-
-        });
-        $("#proSelect").on('change', function() {
-
-        });
-        $('[name=tDnum]').on('blur', function() {
-
-        });
-        $('[name=tDnum]').on('keyup', function() {
-
-        });
+        $(".addAccount").on('click', function () {});
+        $("#proSelect").on('change', function () {});
+        $('[name=tDnum]').on('blur', function () {});
+        $('[name=tDnum]').on('keyup', function () {});
         DataTables = $('#table_id').DataTable({
             "processing": true,
             "serverSide": true, //服务器分页
@@ -213,51 +218,38 @@ var month = {
             // },
             //制定第几列 显示什么属性 columns.data
             //columns.render 渲染函数
-            "aaSorting": [
-                [1, "desc"]
-            ],
-            "aLengthMenu": [
-                [10, 50, 100],
-                [10, 50, 100]
-            ],
+            "aaSorting": [[1, "desc"]],
+            "aLengthMenu": [[10, 50, 100], [10, 50, 100]],
             // "dom": 'rt<"bottom"iflp<"clear">>',
-            "order": [
-                [0, "desc"]
-            ],
+            "order": [[0, "desc"]],
             "ajax": {
                 "url": AccountData,
                 "type": 'post',
-                "data": function(d) {
+                "data": function data(d) {
                     //添加额外的参数传给服务器
                     var filter = {};
                     d.filter = _this.filter;
-
                 }
             },
-            "dom": '<"row"<"#id.col-xs-6"r><"col-xs-6">>' + "t" +
-                '<"row"<"col-xs-6"i><"col-xs-6"p>>',
+            "dom": '<"row"<"#id.col-xs-6"r><"col-xs-6">>' + "t" + '<"row"<"col-xs-6"i><"col-xs-6"p>>',
             "aoColumns": [
-                /**
-                * 第1列默认排序
-                    第2列默认排序
-                    第3列只升序
-                    第4列降序排序，其次是升序，然后再升序
-                    第5列只降序
-                    第6列默认排序
-                */
-                null,
-                null,
-                { "orderSequence": ["asc"] },
-                { "orderSequence": ["desc", "asc", "asc"] },
-                { "orderSequence": ["desc"] },
-                null
-            ],
+            /**
+            * 第1列默认排序
+                第2列默认排序
+                第3列只升序
+                第4列降序排序，其次是升序，然后再升序
+                第5列只降序
+                第6列默认排序
+            */
+            null, null, { "orderSequence": ["asc"] }, { "orderSequence": ["desc", "asc", "asc"] }, { "orderSequence": ["desc"] }, null],
             columnDefs: [{
                 targets: 0,
                 data: "",
                 title: "操作",
-                render: function(data, type, row, meta) { //结算单Id
-                    if (row[11] == "0") { //待申请结算
+                render: function render(data, type, row, meta) {
+                    //结算单Id
+                    if (row[11] == "0") {
+                        //待申请结算
                         return '<input type="checkbox"  name="checkBoxes" data-id="' + row[2] + '">';
                     } else {
                         return '<input type="checkbox" disabled name="checkBoxes" data-id="' + row[2] + '">';
@@ -268,7 +260,7 @@ var month = {
                 "visible": false //隐藏掉那一列
             }, {
                 targets: 11, //判断td内容改td中的内容
-                render: function(data, type, row, meta) {
+                render: function render(data, type, row, meta) {
                     if (data == "1") {
                         return "审核中";
                     } else if (data == "0") {
@@ -284,15 +276,16 @@ var month = {
                 targets: 8,
                 data: "",
                 title: "操作",
-                render: function(data, type, row, meta) {
+                render: function render(data, type, row, meta) {
                     return '<input type="checkbox" name="checkBoxes" data-id="' + row[8] + '">';
                 }
             }],
             // 回调函数， 当表格加载完后
-            initComplete: function() {
+            initComplete: function initComplete() {
                 $("#id").append("input");
             },
-            "createdRow": function(row, data, index) { //改變某航顏色
+            "createdRow": function createdRow(row, data, index) {
+                //改變某航顏色
                 if (data[2].replace(/[\$,]/g, '') * 1 > 4000) {
                     $('td', row).eq(2).html('<div style="border:1px solid red;width:300px">' + data[2] + '</div>');
                 }
@@ -320,12 +313,12 @@ var month = {
                     "sSortAscending": ": 以升序排列此列",
                     "sSortDescending": ": 以降序排列此列"
                 }
-            },
+            }
         });
-        $.fn.dataTable.ext.errMode = function(s, h, m) {};
+        $.fn.dataTable.ext.errMode = function (s, h, m) {};
     },
     //搜索功能
-    selsect: function() {
+    selsect: function selsect() {
         _this.filter = {
             keywords: $('#keywords').val(),
             projectId: $("#projectId").val(),
@@ -335,7 +328,7 @@ var month = {
         // DataTables.draw();
     },
     //打开对账选择商品内容
-    openContent: function(oid) {
+    openContent: function openContent(oid) {
         var url = clearing_url;
         url += '/oid/' + oid; // 需要附带参数 /
         layer.open({
@@ -347,55 +340,57 @@ var month = {
             maxmin: true, //开启最大化最小化按钮
             area: ['99%', '99%'], //窗口宽度
             content: ID, // 类型是1的用ID 2的用链接
-            success: function() { //执行弹出层完成时,获取当前层索引},
+            success: function success() {//执行弹出层完成时,获取当前层索引},
 
             },
-            end: function() {
+            end: function end() {
                 //关闭后执行父页面的功能
             }
         });
     },
-    confirm: function(num) { //确认弹出询问信息
+    confirm: function confirm(num) {
+        //确认弹出询问信息
         parent.layer.confirm('确定结算？', {
             icon: 3,
             title: '结算确认',
-            yes: function() {
+            yes: function yes() {
                 $.ajax({
                     url: clearing_url,
                     type: 'post',
                     dataType: 'json',
                     data: { payRecordList: num },
-                    success: function(data) {
+                    success: function success(data) {
                         if (data.status == 1) {
                             parent.layer.msg('结算已发送，耐心等待审核！');
                             DataTables.ajax.reload();
                             setTimeout(parent.layer.closeAll, 1000);
                         }
                         if (data.url == 1000) {
-                            parent.layer.alert(data.info, function(index) {
+                            parent.layer.alert(data.info, function (index) {
                                 //bankCard 要打开的连接
                                 parent.openFrame(bankCard, 'left-bankCard'); //跳转框架
                                 parent.layer.close(index);
                             });
                         }
                     },
-                    error: function(data) {
+                    error: function error(data) {
                         parent.layer.msg('网站被外星人绑架啦~(≧▽≦)~啦啦啦，请刷新页面！');
                     }
                 });
             },
-            cancel: function() {
+            cancel: function cancel() {
                 _this.dataTable.api().ajax.reload();
             }
         });
     },
-    each: function() { //数组转换对象
+    each: function each() {
+        //数组转换对象
         art = [];
-        $.each($("[name=checkBoxes]:checked"), function(i, n) {
+        $.each($("[name=checkBoxes]:checked"), function (i, n) {
             art.push($(n).attr("data-id"));
             //console.log($(n).attr("data-id"));
         });
         var _atr = art.toString(); //转出object
-    },
+    }
 
 };

@@ -11,11 +11,15 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
     jshint = require('gulp-jshint'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+    babel = require('gulp-babel'),
+    pug = require('gulp-pug'),
+    fileinclude = require('gulp-file-include'); //分离html
 
-gulp.task('default', ['jshint'], function() {
-    gulp.start('minifyjs');
-    return runSequence(['clean'], ['build'], ['serve', 'watch']);
+
+gulp.task('default', ['jshint'], () => {
+    // gulp.start('minifyjs');
+    return runSequence(['clean'], ['build'], ['serve', 'watch'], ['fileinclude']);
 });
 
 gulp.task('clean', function(callback) {
@@ -23,10 +27,21 @@ gulp.task('clean', function(callback) {
 });
 
 gulp.task('build', function(callback) {
-    return runSequence(['compass', 'staticFiles'], callback);
+    return runSequence(['compass', 'minifyjs', 'views', 'staticFiles'], callback);
 });
 
-gulp.task('compass', function() {
+gulp.task('views', function buildHTML() {
+    var YOUR_LOCALS = {};
+    return gulp.src('./src/pugs/*.pug')
+        .pipe(pug({
+            // client: true,//编译成js
+            locals: YOUR_LOCALS, //编译html
+            pretty: true //不压缩代码
+        }))
+        .pipe(gulp.dest('./dist/pugs/'))
+});
+
+gulp.task('compass', () => {
     return gulp.src('./src/**/*.scss')
         .pipe(compass({
             config_file: './config.rb',
@@ -58,45 +73,59 @@ gulp.task('compass', function() {
             cascade: false
         }))
         .pipe(gulp.dest('./dist/stylesheets/'))
-        .pipe(rename({ suffix: '.min' }))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         //压缩样式文件
-        .pipe(minifyCss({ outSourceMap: false }))
+        .pipe(minifyCss({
+            outSourceMap: false
+        }))
         //输出压缩文件到指定目录
         .pipe(gulp.dest('./dist/stylesheets/'));
 });
 
-// gulp.task('testAutoFx', function() {
-//     gulp.src('src/stylesheets/main.css')
-//         .pipe(autoprefixer({
-//             browsers: ['last 2 versions', 'Android >= 4.0'],
-//  cascade: true, //是否美化属性值 默认：true 像这样：
-//-webkit-transform: rotate(45deg);
-//        transform: rotate(45deg);
-// remove: true //是否去掉不必要的前缀 默认：true 
-//         }))
-//         .pipe(gulp.dest('./dist/stylesheets/'));
-// });
+
 
 //合并压缩js
-gulp.task('minifyjs', function() {
+gulp.task('minifyjs', () => {
     return gulp.src('./src/javascripts*/**/*.js') //js代码校验
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(concat('main.js')) //js代码合并 main.js
         .pipe(gulp.dest('./dist/javascripts/')) //整合后的输出路径
-        .pipe(rename({ suffix: '.min' })) ////给文件添加.min后缀
+        .pipe(rename({
+            suffix: '.min'
+        })) ////给文件添加.min后缀
         .pipe(ngAnnotate())
-        .pipe(ngmin({ dynamic: false })) //Pre-minify AngularJS apps with ngmin
+        .pipe(ngmin({
+            dynamic: false
+        })) //Pre-minify AngularJS apps with ngmin
         .pipe(stripDebug()) //除去js代码中的console和debugger输出
-        .pipe(uglify({ outSourceMap: false })) //压缩脚本文件
+        .pipe(uglify({
+            outSourceMap: false
+        })) //压缩脚本文件
         .pipe(gulp.dest('./dist/javascripts/')); //输出压缩文件到指定目录
 });
 
-gulp.task('jshint', function() {
+gulp.task('fileinclude', () => {
+    // 适配page中所有文件夹下的所有html，排除page下的include文件夹中html
+    return gulp.src(['src/**/*.html', '!src/include/**.html'])
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(gulp.dest('./dist/'));
+});
+
+
+gulp.task('jshint', () => {
     return gulp.src('./src/javascripts/**/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
 
-gulp.task('staticFiles', function() {
+gulp.task('staticFiles', () => {
     return gulp.src([
             './src/**/*.html',
             './src/images*/**/*.*',
@@ -107,24 +136,25 @@ gulp.task('staticFiles', function() {
         .pipe(gulp.dest('./dist/'));
 })
 
-gulp.task('serve', function() {
+gulp.task('serve', () => {
     browserSync.init({
         server: './dist',
         port: 8888
     });
 });
 
-gulp.task('reload', function() {
+gulp.task('reload', () => {
     return browserSync.reload();
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
     return gulp.watch([
         './src/**/*.html',
+        './src/**/*.pug',
         './src/**/*.scss',
         './src/**/*.js'
-    ], function() {
-        return runSequence(['build'], ['reload'], ['minifyjs']);
+    ], () => {
+        return runSequence(['build'], ['minifyjs'], ['fileinclude'], ['reload']);
     })
 });
 
