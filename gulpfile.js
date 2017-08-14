@@ -41,6 +41,17 @@ gulp.task('views', function buildHTML() {
         .pipe(gulp.dest('./dist/pugs/'))
 });
 
+// gulp.task('views', function buildHTML() {
+//     var YOUR_LOCALS = {};
+//     return gulp.src('./src/*.pug')
+//         .pipe(pug({
+//             // client: true,//编译成js
+//             locals: YOUR_LOCALS, //编译html
+//             pretty: true //不压缩代码
+//         }))
+//         .pipe(gulp.dest('./dist/'))
+// });
+
 gulp.task('compass', () => {
     return gulp.src('./src/**/*.scss')
         .pipe(compass({
