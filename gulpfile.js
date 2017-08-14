@@ -41,7 +41,7 @@ gulp.task('views', function buildHTML() {
         .pipe(gulp.dest('./dist/pugs/'))
 });
 
-// gulp.task('views', function buildHTML() {
+// gulp.task('views2', function buildHTML() {
 //     var YOUR_LOCALS = {};
 //     return gulp.src('./src/*.pug')
 //         .pipe(pug({
@@ -136,12 +136,13 @@ gulp.task('jshint', () => {
         .pipe(jshint.reporter('default'));
 });
 
+// 复制文件
 gulp.task('staticFiles', () => {
     return gulp.src([
-            './src/**/*.html',
+            // './src/**/*.html',
             './src/images*/**/*.*',
-            './src/javascripts*/**/*.js',
-            './src/stylesheets*/**/*.css',
+            // './src/javascripts*/**/*.js',
+            // './src/stylesheets*/**/*.css',
             './src/framework*/**/*.*'
         ])
         .pipe(gulp.dest('./dist/'));
