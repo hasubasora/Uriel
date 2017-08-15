@@ -125,7 +125,18 @@ a:hover {
   -webkit-tap-highlight-color: transparent;
 }
 
-html, body {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+html,
+body {
   font-family: "微软雅黑";
   font-size: 100%;
   width: 100%;
@@ -144,8 +155,10 @@ html *:after {
   transition: 0.1s;
 }
 
-html i, html em,
-html b, html strong,
+html i,
+html em,
+html b,
+html strong,
 html span {
   -webkit-transition: none;
   transition: none;
@@ -174,23 +187,16 @@ html span {
 a {
   text-decoration: none;
   color: #555;
-  -webkit-box-shadow: 0px 5px -2px 0px #333;
-  box-shadow: 0px 5px -2px 0px #333;
 }
 a:active {
   color: #dedede;
-  -webkit-box-shadow: 0px 1px 1px 0px #333;
-  box-shadow: 0px 1px 1px 0px #333;
 }
 
-button, input[type=button] {
+button,
+input[type=button] {
   outline: none;
   border: none;
   cursor: pointer;
-}
-
-img {
-  display: block;
 }
 
 @font-face {
@@ -209,6 +215,21 @@ img {
 }
 
 /*<i class="iconfont">&#x33;</i>*/
+.flex_box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex_box .flex_item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
 /*! Component 组件*/
 .box {
   margin: 10px 0;
