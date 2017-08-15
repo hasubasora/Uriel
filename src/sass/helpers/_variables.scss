@@ -16,17 +16,20 @@ $sm: 760px 320px;
 $md: 960px 760px;
 $lg: 1180px 960px;
 $big: 1180px;
-//@include breakpoint($big){
-//  height: 30%;
-//}
+//@include breakpoint($big){height: 30%;}
 
 /*常用颜色*/
 
-$fontFamily:"微软雅黑";
-$bgcolor:#fff #f2f2f2 #ccc #eee #555 #fafdff #fafafa #f6f6f6;
-$color: #1e89e0 #006bc7 #d2e7f9 #8d8d8d;
-//大屏 中屏 iPad 
-$size: 1180px 960px 760px 320px;
+$fontFamily:"黑体";
+$bgcolor:#fff #f9f9f9 #f8f8f8;
+$color: red;
+$green:#10aa71 #B3E7C1 #90dda5;
+$red:#E4433D #DD9090;
+$blue:#2086d7;
+$orange:#ec7c27;
+$black:#2B3A42;
+//
+$size:1600px 1280px 1080px 960px 320px;
 //清楚浮动
 %clearfix:after {
     content: "";
@@ -42,4 +45,3 @@ $size: 1180px 960px 760px 320px;
     position: absolute;
     top: -10px;
 }
-
