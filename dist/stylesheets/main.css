@@ -263,110 +263,49 @@ input[type=button] {
   display: inline-flex;
 }
 
-div {
-  border: 1px solid red;
-}
-
 /*! Component 组件*/
-.box {
-  margin: 10px 0;
-  padding: 0 10px;
+.cqLogin {
+  top: 65px;
+  position: absolute;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.cqLogin .box_justify {
+  height: 400px;
+  width: 300px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.cqLogin .box_justify .box_cq {
+  margin: 50px auto;
+  outline: 1px solid red;
+  height: 200px;
+  width: 200px;
+}
+.cqLogin .box_justify p {
+  margin: 50px auto;
 }
 
-.abox {
-  height: 2.5rem;
-  line-height: 2.5rem;
-}
-
-.btn {
-  padding: 0.7rem 2.5rem;
-  text-align: center;
-  display: inline-block;
-  font-size: 1rem;
-  margin-right: 2rem;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-}
-
-.btn-success {
-  background: #a8ff60;
-  color: white;
-}
-
-.btn-info {
-  background: #799dfb;
-  color: white;
-}
-
-.text {
-  height: 2.5rem;
-  width: 15rem;
-  text-indent: 5px;
-  margin-right: 1rem;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.Ubox {
-  *zoom: 1;
-}
-.Ubox:before, .Ubox:after {
-  content: "";
-  display: table;
-}
-.Ubox:after {
-  clear: both;
-  overflow: hidden;
-}
-.Ubox li {
-  cursor: pointer;
-  width: 33.33333%;
-  float: left;
-  padding-left: 0.83333%;
-  padding-right: 0.83333%;
-  float: left;
-  height: 2.5rem;
-  line-height: 2.5rem;
-  padding-right: 100px;
-}
-
-.background {
-  background: #edf3f9;
-}
-
-.jian {
-  color: red;
-}
-
-.jia {
-  color: green;
-}
-
-.boxbtn {
-  margin-top: 60px;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-transform: rotate(435deg);
-  -ms-transform: rotate(435deg);
-  transform: rotate(435deg);
-}
-
-@-webkit-keyframes onr {
-  from {
-    left: 0;
-  }
-  to {
-    left: -440px;
-  }
-}
-
-@keyframes onr {
-  from {
-    left: 0;
-  }
-  to {
-    left: -440px;
-  }
+#particles {
+  background-image: url("../images/back.jpg");
 }
