@@ -214,9 +214,36 @@ input[type=button] {
 /*<i class="iconfont">&#x33;</i>*/
 .flex_box {
   display: flex;
+  /*上面两个的综合*/
+  /*在子元素没用flex的时候才生效*/
+  /*属性定义项目在交叉轴上如何对齐。上下的 有flex也可以用*/
+  /*属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。（真的没反应先放着）*/
 }
 .flex_box .flex_item {
-  flex: 1;
+  border: 1px solid red;
+}
+.flex_box .flex_item:nth-child(1) {
+  flex-basis: 1;
+}
+.flex_box .flex_item:nth-child(2) {
+  flex-basis: 2;
+}
+.flex_box .flex_item:nth-child(3) {
+  flex-basis: 3;
+}
+.flex_box .flex_item:nth-child(4) {
+  flex-basis: 4;
+}
+.flex_box .flex_item:nth-child(5) {
+  flex-basis: 5;
+}
+
+.flex_inline_box {
+  display: inline-flex;
+}
+
+div {
+  border: 1px solid red;
 }
 
 /*! Component 组件*/

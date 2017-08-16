@@ -1,7 +1,52 @@
+@charset "UTF-8";
 // flex
 .flex_box {
     display: flex;
+    // flex-direction: row; //default left to right 1 2 3
+    // flex-direction: row-reverse;//left to right 3 2 1
+    // flex-direction: column;//top to bottom 1 2 3
+    // flex-direction: column-reverse; //top to bottom  3 2 1
+    // flex-wrap: nowrap ;//default 不换行
+    // flex-wrap: wrap; //挤不下会换行
+    // flex-wrap: wrap-reverse ;//挤不下会换行 倒过来
+    /*上面两个的综合*/
+    // flex-flow: row-reverse wrap;
+    /*在子元素没用flex的时候才生效*/
+    // justify-content: flex-start; //（默认值）：左对齐
+    // justify-content: flex-end; //右对齐
+    // justify-content: center; //居中
+    // justify-content: space-between; //两端对齐，项目之间的间隔都相等。
+    // justify-content: space-around; //每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+    /*属性定义项目在交叉轴上如何对齐。上下的 有flex也可以用*/
+    // align-items: flex-start; //交叉轴的起点对齐。盒子里最上面
+    // align-items: flex-end; //交叉轴的终点对齐。盒子里最下面
+    // align-items: center; //交叉轴的中点对齐。居中
+    // align-items: baseline; //项目的第一行文字的基线对齐。文字的行高对齐
+    // align-items: stretch; //（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
+    /*属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。（真的没反应先放着）*/
+    //  flex-start| flex-end | center | space-between | space-around | stretch
     .flex_item {
-        flex: 1;
+        // flex: 1;
+        border: 1px solid red;
+        // order: 1;//数值越小，排列越靠前，默认为0。 用来排序的nth-child(7)配合玩
+        @for $e from 1 to 6 {
+            &:nth-child(#{$e}) {
+                // order: $e;
+                flex-basis: $e;
+                @debug($e)
+            }
+        }
+        // flex-grow: 1;//默认为0，即如果存在剩余空间，也不放大。 几份就是几份大
+        // flex-shrink: 1;如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。
+        // flex-basis
+        // align-self
     }
+}
+
+.flex_inline_box {
+    display: inline-flex;
+}
+
+div {
+    border: 1px solid red;
 }

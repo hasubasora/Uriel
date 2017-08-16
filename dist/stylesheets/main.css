@@ -221,13 +221,50 @@ input[type=button] {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  /*上面两个的综合*/
+  /*在子元素没用flex的时候才生效*/
+  /*属性定义项目在交叉轴上如何对齐。上下的 有flex也可以用*/
+  /*属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。（真的没反应先放着）*/
 }
 .flex_box .flex_item {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -moz-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+  border: 1px solid red;
+}
+.flex_box .flex_item:nth-child(1) {
+  -webkit-flex-basis: 1;
+  -ms-flex-preferred-size: 1;
+  flex-basis: 1;
+}
+.flex_box .flex_item:nth-child(2) {
+  -webkit-flex-basis: 2;
+  -ms-flex-preferred-size: 2;
+  flex-basis: 2;
+}
+.flex_box .flex_item:nth-child(3) {
+  -webkit-flex-basis: 3;
+  -ms-flex-preferred-size: 3;
+  flex-basis: 3;
+}
+.flex_box .flex_item:nth-child(4) {
+  -webkit-flex-basis: 4;
+  -ms-flex-preferred-size: 4;
+  flex-basis: 4;
+}
+.flex_box .flex_item:nth-child(5) {
+  -webkit-flex-basis: 5;
+  -ms-flex-preferred-size: 5;
+  flex-basis: 5;
+}
+
+.flex_inline_box {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+div {
+  border: 1px solid red;
 }
 
 /*! Component 组件*/
