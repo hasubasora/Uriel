@@ -89,7 +89,7 @@ gulp.task('compass', () => {
         }))
         //压缩样式文件
         .pipe(minifyCss({
-            outSourceMap: false
+            outSourceMap: true
         }))
         //输出压缩文件到指定目录
         .pipe(gulp.dest('./dist/stylesheets/'));

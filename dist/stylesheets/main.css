@@ -298,7 +298,6 @@ input[type=button] {
 }
 .cqLogin .box_justify .box_cq {
   margin: 50px auto;
-  outline: 1px solid red;
   height: 200px;
   width: 200px;
 }
