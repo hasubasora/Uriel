@@ -36,7 +36,7 @@ const filter = {
      * @param reg
      */
     character(char, reg) {
-        return char ? reg || /[`~@#$^&*()=|{}''\\[\\]\.<>\/~！@#￥……&*（）+——|{}【】‘；：”“'。，、？]/.test(char) : '';
+        return char ? reg || /[$￥#~`!！@%^…&*()_+-=【】\{\}\[\]|、\\:;：；‘’\'\"“”\<\>?《》？，。、]/g.test(char) : '';
         // console.log(reg.test(tel))
     },
     /**

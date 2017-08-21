@@ -243,26 +243,37 @@ input[type=button] {
 }
 
 /*! Component 组件*/
-.cqLogin {
+.qeCodeBox {
   top: 65px;
   position: absolute;
   width: 100%;
   display: flex;
   justify-content: center;
+  outline: 1px solid red;
 }
-.cqLogin .box_justify {
+.qeCodeBox .box_justify {
   height: 400px;
   width: 300px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  outline: 1px solid red;
 }
-.cqLogin .box_justify .box_cq {
+.qeCodeBox .box_justify .box_cq {
   margin: 50px auto;
   height: 200px;
   width: 200px;
+  outline: 1px solid red;
+  display: flex;
 }
-.cqLogin .box_justify p {
+.qeCodeBox .box_justify .box_cq .logo {
+  height: 40px;
+  width: 40px;
+}
+.qeCodeBox .box_justify .box_cq .msg {
+  flex: 1;
+}
+.qeCodeBox .box_justify p {
   margin: 50px auto;
 }
 

@@ -1,17 +1,27 @@
-.cqLogin {
+.qeCodeBox {
     top: 65px;
     position: absolute;
     width: 100%;
     display: flex;
     justify-content: center; //居中
+    @include outline;
     .box_justify {
         @include wh(300px, 400px);
         background-color: #fff;
         display: flex;
         flex-direction: column;
+        @include outline;
         .box_cq {
             margin: 50px auto;
             @include wh(200px, 200px);
+            @include outline;
+            display: flex;
+            .logo {
+                @include wh(40px, 40px);
+            }
+            .msg {
+                flex: 1;
+            }
         }
         p {
             margin: 50px auto;
