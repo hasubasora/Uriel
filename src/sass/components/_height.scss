@@ -12,14 +12,22 @@
         flex-direction: column;
         @include outline;
         .box_cq {
-            margin: 50px auto;
-            @include wh(200px, 200px);
+            &:nth-child(2) {
+                @include wh(200px, 200px);
+                margin-top: 0;
+            }
+            margin: 50px auto 0;
+            @include wh(100%, 200px);
             @include outline;
             display: flex;
             .logo {
-                @include wh(40px, 40px);
+                @include wh(60px, 60px);
+                img {
+                    border-radius: 50px;
+                }
             }
             .msg {
+                padding: 10px;
                 flex: 1;
             }
         }

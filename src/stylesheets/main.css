@@ -260,17 +260,26 @@ input[type=button] {
   outline: 1px solid red;
 }
 .qeCodeBox .box_justify .box_cq {
-  margin: 50px auto;
+  margin: 50px auto 0;
   height: 200px;
-  width: 200px;
+  width: 100%;
   outline: 1px solid red;
   display: flex;
 }
+.qeCodeBox .box_justify .box_cq:nth-child(2) {
+  height: 200px;
+  width: 200px;
+  margin-top: 0;
+}
 .qeCodeBox .box_justify .box_cq .logo {
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
+}
+.qeCodeBox .box_justify .box_cq .logo img {
+  border-radius: 50px;
 }
 .qeCodeBox .box_justify .box_cq .msg {
+  padding: 10px;
   flex: 1;
 }
 .qeCodeBox .box_justify p {

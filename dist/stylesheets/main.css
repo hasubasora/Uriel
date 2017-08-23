@@ -299,9 +299,9 @@ input[type=button] {
   outline: 1px solid red;
 }
 .qeCodeBox .box_justify .box_cq {
-  margin: 50px auto;
+  margin: 50px auto 0;
   height: 200px;
-  width: 200px;
+  width: 100%;
   outline: 1px solid red;
   display: -webkit-box;
   display: -webkit-flex;
@@ -309,11 +309,21 @@ input[type=button] {
   display: -ms-flexbox;
   display: flex;
 }
+.qeCodeBox .box_justify .box_cq:nth-child(2) {
+  height: 200px;
+  width: 200px;
+  margin-top: 0;
+}
 .qeCodeBox .box_justify .box_cq .logo {
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
+}
+.qeCodeBox .box_justify .box_cq .logo img {
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
 }
 .qeCodeBox .box_justify .box_cq .msg {
+  padding: 10px;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -moz-box-flex: 1;
