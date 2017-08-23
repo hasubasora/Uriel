@@ -54,6 +54,11 @@ html span {
     @include clearfix;
 }
 
+.containers {
+    width: 100%;
+    @include clearfix;
+}
+
 // @include box-shadow(0px 1px 1px 0px #333);
 a {
     text-decoration: none;
