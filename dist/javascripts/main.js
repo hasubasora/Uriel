@@ -260,6 +260,40 @@ var filter = {
         }
     }
 };
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// src/foo.js
+exports.default = 'hello world!';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function () {
+    console.log(_foo2.default);
+};
+
+var _foo = require('./foo.js');
+
+var _foo2 = _interopRequireDefault(_foo);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+"use strict";
+
+;
+(function () {
+    var ft = document.getElementsByTagName("html")[0]; //获取到html标签
+    var s = window.screen.width; //获取屏幕的宽度
+    window.onresize = function () {
+        //屏幕尺寸改变触发
+        var w = document.body.offsetWidth; //获取浏览器内容的宽度
+        ft.style.fontSize = w / s * 16 + "px";
+    };
+})();
 "use strict";
 
 /**

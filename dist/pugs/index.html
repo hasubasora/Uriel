@@ -2,18 +2,30 @@
 <html lang="en">
   <head>
     <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="../javascripts/rem.js"></script>
     <link href="../stylesheets/main.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
-      <div class="flex_box">
-        <div class="flex_item">1111</div>
-        <div class="flex_item">2222</div>
-        <div class="flex_item" style="width:100px;height:300px;">7777</div>
-        <div class="flex_item" style="width:200px;height:200px;">8888</div>
-        <div class="flex_item" style="width:300px;height:100px;">9999</div>
-        <div class="flex_item">3333</div>
-        <div class="flex_item">0000</div>
+    <div class="containers">
+      <div class="loveBox"><img src="../images/index.jpg" alt=""></div>
+      <div class="btnbox">
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <script>let btn=document.querySelectorAll('.btn');</script>
+      </div>
+      <div class="saveLove">
+        <div class="inputgl">
+          <input type="text" placeholder="输入ID"><span>搜索</span>
+        </div>
+        <div class="inputlz"><img src="../images/nz.jpg" alt="">
+          <div class="nameBox"><span>你好啊</span>
+            <p>ID:123456</p>
+          </div>
+        </div>
+        <div class="inputlx" contenteditable="true" placeholder="输入告白"></div>
+        <div class="inputbt"><span>取消表白</span><span>发送</span></div>
       </div>
     </div>
   </body>

@@ -111,6 +111,10 @@ $legacy-support-for-ie:true;
     text-overflow: $ellipsis;
 }
 
+@function rem($se, $base:16) {
+    @return ($se/$base)*1rem;
+}
+
 // @function screen($screen){
 //   @if $screen==lg{
 //      @return (max-width 1180px) (min-width 980px);

@@ -141,7 +141,7 @@ gulp.task('staticFiles', () => {
     return gulp.src([
             // './src/**/*.html',
             './src/images*/**/*.*',
-            // './src/javascripts*/**/*.js',
+            './src/javascripts*/**/*.js',
             // './src/stylesheets*/**/*.css',
             './src/framework*/**/*.*'
         ])
