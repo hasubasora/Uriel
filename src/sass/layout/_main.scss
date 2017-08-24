@@ -52,11 +52,13 @@ html span {
 .container {
     @include container($containerWidth); //最大宽度
     @include clearfix;
+    display: flex;
 }
 
 .containers {
     width: 100%;
     @include clearfix;
+    display: flex;
 }
 
 // @include box-shadow(0px 1px 1px 0px #333);

@@ -166,6 +166,7 @@ html span {
   margin-left: auto;
   margin-right: auto;
   *zoom: 1;
+  display: flex;
 }
 .container:after {
   content: " ";
@@ -184,6 +185,7 @@ html span {
 .containers {
   width: 100%;
   *zoom: 1;
+  display: flex;
 }
 .containers:before, .containers:after {
   content: "";
@@ -317,7 +319,7 @@ input[type=button] {
   z-index: 22;
   display: flex;
   width: 100%;
-  margin-top: 11.875rem;
+  margin-top: 14.0625rem;
 }
 .btnbox .btn {
   outline: 1px solid red;
@@ -332,10 +334,12 @@ input[type=button] {
 .saveLove {
   padding: 1.25rem;
   position: absolute;
-  top: 16.25rem;
+  top: 19.375rem;
   width: 90%;
   background: #202743;
   margin: 0 5%;
+  min-height: 18.75rem;
+  border-radius: 10px;
 }
 .saveLove .inputgl {
   display: flex;
@@ -355,6 +359,8 @@ input[type=button] {
 .saveLove .inputgl span {
   height: 2.8125rem;
   width: 2.8125rem;
+  background: url("../images/ss.jpg") no-repeat;
+  background-size: contain;
 }
 .saveLove .inputlz {
   align-items: center;
@@ -384,6 +390,7 @@ input[type=button] {
   border: 0;
   outline: 0;
   color: #fff;
+  padding: 20px;
 }
 .saveLove .inputbt {
   display: flex;
@@ -398,4 +405,48 @@ input[type=button] {
   border-radius: 5px;
   line-height: 1.875rem;
   background: #fffc00;
+}
+.saveLove .txt {
+  color: #fff;
+  line-height: 1.875rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.saveLove .lovesLv {
+  display: flex;
+  color: #ffffff;
+  align-items: center;
+  font-size: 0.75rem;
+  padding-bottom: 0.625rem;
+}
+.saveLove .lovesLv .lv {
+  width: 2.5rem;
+}
+.saveLove .lovesLv .pic {
+  flex: 1;
+}
+.saveLove .lovesLv .pic img {
+  width: 3.125rem;
+  border-radius: 50px;
+}
+.saveLove .lovesLv .txts {
+  flex: 1;
+}
+.saveLove .lovesLv .morau {
+  flex: 1;
+}
+
+.containers {
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+}
+
+.scrollWrap {
+  position: absolute;
+}
+
+.hide {
+  overflow: hidden;
 }
