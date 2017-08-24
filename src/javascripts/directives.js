@@ -28,7 +28,7 @@ window.onload = function() {
             var dis = nowPoint - startPoint;
             var _top = startEl + dis;
             console.log(_top)
-            scroll.style.transform = `translate3d(0, ${_top}px, 0)`;
+            scroll.style.transform = scroll.style.transform = `translate3d(0, ${_top}px, 0)`;
             // if (_top > 0) {
             //     _top = 0;
             // }
