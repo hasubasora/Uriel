@@ -58,7 +58,7 @@
     z-index: 22;
     display: flex;
     width: 100%;
-    margin-top: rem(190);
+    margin-top: rem(225);
     .btn {
         @include outline;
         height: rem(50);
@@ -70,10 +70,12 @@
 .saveLove {
     padding: rem(20);
     position: absolute;
-    top: rem(260);
+    top: rem(310);
     width: 90%;
     background: rgb(32, 39, 67);
     margin: 0 5%;
+    min-height: rem(300);
+    border-radius: 10px;
     .inputgl {
         display: flex;
         margin-bottom: rem(20);
@@ -91,6 +93,8 @@
         span {
             height: rem(45);
             width: rem(45);
+            background: url('../images/ss.jpg')no-repeat;
+            background-size: contain;
         }
     }
     .inputlz {
@@ -121,6 +125,7 @@
         border: 0;
         outline: 0;
         color: #fff;
+        padding: 20px;
     }
     .inputbt {
         display: flex;
@@ -136,4 +141,47 @@
             background: rgb(255, 252, 0);
         }
     }
+    .txt {
+        color: #fff;
+        line-height: rem(30);
+        @include text-hide();
+    }
+    .lovesLv {
+        display: flex;
+        color: #ffffff;
+        align-items: center;
+        font-size: rem(12);
+        padding-bottom: rem(10);
+        .lv {
+            // flex: 1;
+            width: rem(40);
+        }
+        .pic {
+            flex: 1;
+            img {
+                width: rem(50);
+                border-radius: 50px;
+            }
+        }
+        .txts {
+            flex: 1;
+        }
+        .morau {
+            flex: 1;
+        }
+    }
+}
+
+.containers {
+    overflow: hidden;
+    position: relative;
+    flex: 1;
+}
+
+.scrollWrap {
+    position: absolute;
+}
+
+.hide {
+    overflow: hidden;
 }

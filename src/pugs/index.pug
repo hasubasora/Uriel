@@ -4,10 +4,12 @@ html(lang="en")
     title= pageTitle
     meta(name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no")
     script(src="../javascripts/rem.js")
+    script(src="../javascripts/directives.js")
     link(href="../stylesheets/main.css",rel="stylesheet")
-     
+
   body
-    .containers
+    .containers.hide
+     .scrollWrap
       .loveBox
         img(src="../images/index.jpg", alt="")
       .btnbox
@@ -15,19 +17,126 @@ html(lang="en")
         .btn
         .btn
         script.
-         let btn=document.querySelectorAll('.btn');
+       
+        //-  切换
       .saveLove
+       .lovesLv
+         .lv No.01
+         .pic 
+            img(src="../images/psb.jpg", alt="")    
+         .txts
+          p 昵称
+          span ID:000000
+         .morau
+          p 收到表白
+          span 12345个
+       .lovesLv
+         .lv No.01
+         .pic 
+            img(src="../images/psb.jpg", alt="")    
+         .txts
+          p 昵称
+          span ID:000000
+         .morau
+          p 收到表白
+          span 12345个
+       .lovesLv
+         .lv No.01
+         .pic 
+            img(src="../images/psb.jpg", alt="")    
+         .txts
+          p 昵称
+          span ID:000000
+         .morau
+          p 收到表白
+          span 12345个
+       .lovesLv
+         .lv No.01
+         .pic 
+            img(src="../images/psb.jpg", alt="")    
+         .txts
+          p 昵称
+          span ID:000000
+         .morau
+          p 收到表白
+          span 12345个
+       .lovesLv
+         .lv No.01
+         .pic 
+            img(src="../images/psb.jpg", alt="")    
+         .txts
+          p 昵称
+          span ID:000000
+         .morau
+          p 收到表白
+          span 12345个
+       .lovesLv
+         .lv No.01
+         .pic 
+            img(src="../images/psb.jpg", alt="")    
+         .txts
+          p 昵称
+          span ID:000000
+         .morau
+          p 收到表白
+          span 12345个
+       .lovesLv
+         .lv No.01
+         .pic 
+            img(src="../images/psb.jpg", alt="")    
+         .txts
+          p 昵称
+          span ID:000000
+         .morau
+          p 收到表白
+          span 12345个
+       .lovesLv
+         .lv No.01
+         .pic 
+            img(src="../images/psb.jpg", alt="")    
+         .txts
+          p 昵称
+          span ID:000000
+         .morau
+          p 收到表白
+          span 12345个
+       .lovesLv
+         .lv No.01
+         .pic 
+            img(src="../images/psb.jpg", alt="")    
+         .txts
+          p 昵称
+          span ID:000000
+         .morau
+          p 收到表白
+          span 12345个
+       .lovesLv
+         .lv No.01
+         .pic 
+            img(src="../images/psb.jpg", alt="")    
+         .txts
+          p 昵称
+          span ID:000000
+         .morau
+          p 收到表白
+          span 12345个          
+      .saveLove(style="display:none")
+        p.txt XXX对XXX说我爱你哦
+        p.txt XXX对XXX说我爱你哦哈哈哈哈哈哈哈哈哈哈哈哈哈
+        p.txt XXX对XXX说我爱你哦
+        p.txt XXX对XXX说我爱你哦
+      .saveLove(style="display:none")
         .inputgl
           input(type="text",placeholder="输入ID")
-          span 搜索
+          span 
         .inputlz
-          img(src="../images/nz.jpg", alt="")    
+          img(src="../images/psb.jpg", alt="")    
           .nameBox
             span 你好啊
             p ID:123456
         .inputlx(contenteditable="true",placeholder="输入告白")
         .inputbt
-          span 取消表白
+          span 取消表白 
           span 发送
             
 
