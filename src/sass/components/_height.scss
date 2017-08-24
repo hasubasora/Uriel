@@ -60,7 +60,7 @@
     width: 100%;
     margin-top: rem(225);
     .btn {
-        @include outline;
+        // @include outline;
         height: rem(50);
         @include span(4);
         flex: 1;
@@ -180,8 +180,5 @@
 
 .scrollWrap {
     position: absolute;
-}
-
-.hide {
     overflow: hidden;
 }
