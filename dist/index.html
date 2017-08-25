@@ -13,20 +13,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylesheets/main.css">
-
+    <script src="framework/jquery.1.11.1.min.js"></script>
 </head>
 
 <body>
+
     <div class="qeCodeBox">
         <div class="box_justify">
             <div class="box_cq">
                 <div class="logo">
-                    <img src="images\nx.jpg" alt="" width="60">
+                    <img src="images\psb.jpg" alt="" width="60">
                 </div>
                 <div class="msg">
-                    <h5>啊啊啊哦哦哦公司</h5>
+                    <h5>好气喔，但是要保持乖巧</h5>
                     <span> 部门：啊啊啊啊啊啊</span>
-                    <span> 职位：好好好好好好好</span>
+                    <span> 职位：要饭专属</span>
                 </div>
             </div>
             <div class="box_cq">
@@ -34,20 +35,29 @@
                 11
             </div>
             <p>扫一扫上面二维码，加入我们的企业吧</p>
+            <p>邀请码:<i>999999999999</i> <span class="copys">复制</span> </p>
+            <textarea rows="" style="display:none" cols="">999999999999</textarea>
         </div>
     </div>
+    <script type="text/javascript">
+        $(".copys").on("touchstart", function() {
+            $('textarea').select();
+            document.execCommand("Copy");
+            alert("复制成功!");
+        });
+    </script>
 
-    <!-- 搜索 -->
-    <!-- banner -->
-    <!-- 分类入口 -->
-    <!-- 头条 -->
-    <!-- 推荐 1+3-->
-    <!-- 推荐 2*6 -->
-    <!-- 推荐 （1+2）+（1+2）-->
-    <!-- 广告条 -->
-    <!-- 推荐 上4 下3+3 -->
-    <!-- 推荐 带标题的商品图 -->
 </body>
 
 
 </html>
+<!-- 搜索 -->
+<!-- banner -->
+<!-- 分类入口 -->
+<!-- 头条 -->
+<!-- 推荐 1+3-->
+<!-- 推荐 2*6 -->
+<!-- 推荐 （1+2）+（1+2）-->
+<!-- 广告条 -->
+<!-- 推荐 上4 下3+3 -->
+<!-- 推荐 带标题的商品图 -->

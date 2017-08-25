@@ -258,33 +258,39 @@ input[type=button] {
 }
 
 /*! Component 组件*/
+body {
+  background: url("../images/jjb.png") no-repeat;
+  background-size: contain;
+  background-color: #000;
+}
+
 .qeCodeBox {
-  top: 65px;
+  top: 2.8125rem;
   position: absolute;
   width: 100%;
   display: flex;
   justify-content: center;
-  outline: 1px solid red;
 }
 .qeCodeBox .box_justify {
-  height: 400px;
-  width: 300px;
-  background-color: #fff;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  outline: 1px solid red;
 }
 .qeCodeBox .box_justify .box_cq {
-  margin: 50px auto 0;
-  height: 200px;
+  margin: 0 auto 0;
+  justify-content: center;
+  padding: 20px;
+  height: 100px;
   width: 100%;
-  outline: 1px solid red;
   display: flex;
+  align-items: center;
 }
 .qeCodeBox .box_justify .box_cq:nth-child(2) {
-  height: 200px;
-  width: 200px;
+  height: 17.5rem;
+  width: 17.5rem;
   margin-top: 0;
+  background: url("../images/1502938817.png") no-repeat;
 }
 .qeCodeBox .box_justify .box_cq .logo {
   height: 60px;
@@ -292,13 +298,20 @@ input[type=button] {
 }
 .qeCodeBox .box_justify .box_cq .logo img {
   border-radius: 50px;
+  display: block;
 }
 .qeCodeBox .box_justify .box_cq .msg {
   padding: 10px;
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.qeCodeBox .box_justify .box_cq .msg > h5 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .qeCodeBox .box_justify p {
-  margin: 50px auto;
+  margin: 10px auto;
 }
 
 #particles {

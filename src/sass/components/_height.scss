@@ -1,38 +1,59 @@
+body {
+    background: url('../images/jjb.png')no-repeat;
+    // background-color: #FFBD00;
+    background-size: contain;
+    background-color: #000;
+}
+
 .qeCodeBox {
-    top: 65px;
+    top: rem(45);
     position: absolute;
     width: 100%;
     display: flex;
     justify-content: center; //居中
-    @include outline;
+    // @include outline; 
     .box_justify {
-        @include wh(300px, 400px);
-        background-color: #fff;
+        @include wh(100%,
+        100%);
+        // background-color: #fff;
         display: flex;
         flex-direction: column;
-        @include outline;
+        // @include outline;
         .box_cq {
             &:nth-child(2) {
-                @include wh(200px, 200px);
+                @include wh(rem(280),
+                rem(280));
                 margin-top: 0;
+                background: url('../images/1502938817.png')no-repeat;
             }
-            margin: 50px auto 0;
-            @include wh(100%, 200px);
-            @include outline;
+            margin: 0 auto 0;
+            justify-content: center;
+            padding: 20px;
+            @include wh(100%,
+            100px);
+            // @include outline;
             display: flex;
+            align-items: center;
             .logo {
-                @include wh(60px, 60px);
+                @include wh(60px,
+                60px);
+                // @include outline;
                 img {
                     border-radius: 50px;
+                    display: block;
                 }
             }
             .msg {
                 padding: 10px;
-                flex: 1;
+                display: flex;
+                flex-direction: column;
+                >h5 {
+                    @include text-hide;
+                }
             }
         }
         p {
-            margin: 50px auto;
+            margin: 10px auto;
         }
     }
 }
