@@ -335,7 +335,6 @@ body {
   margin-top: 14.0625rem;
 }
 .btnbox .btn {
-  outline: 1px solid red;
   height: 3.125rem;
   width: 33.33333%;
   float: left;
@@ -458,8 +457,5 @@ body {
 
 .scrollWrap {
   position: absolute;
-}
-
-.hide {
   overflow: hidden;
 }
