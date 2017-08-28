@@ -254,7 +254,7 @@ input[type=button] {
   padding: 0 20px;
 }
 .loginPage .backLogin {
-  background: green;
+  background: url("../images/bg.jpg") no-repeat center center;
   height: 100%;
   width: 100%;
   display: -webkit-box;
@@ -264,7 +264,6 @@ input[type=button] {
   display: flex;
 }
 .loginPage .backLogin .left {
-  outline: 1px solid blue;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -moz-box-flex: 1;
@@ -272,7 +271,6 @@ input[type=button] {
   flex: 1;
 }
 .loginPage .backLogin .right {
-  outline: 1px solid blue;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -moz-box-flex: 1;
@@ -290,7 +288,6 @@ input[type=button] {
   align-items: center;
 }
 .loginPage .backLogin .right .loginsLeft {
-  outline: 1px solid red;
   -webkit-box-flex: 2;
   -webkit-flex: 2;
   -moz-box-flex: 2;
@@ -298,7 +295,7 @@ input[type=button] {
   flex: 2;
 }
 .loginPage .backLogin .right .loginsLeft .loginBox {
-  outline: 1px solid blue;
+  overflow: hidden;
   width: 380px;
 }
 .loginPage .backLogin .right .loginsLeft .loginBox section {
@@ -309,8 +306,11 @@ input[type=button] {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
+.loginPage .backLogin .right .loginsLeft .loginBox section .warning {
+  color: red;
+  text-align: center;
+}
 .loginPage .backLogin .right .loginsLeft .loginBox section .tabs {
-  outline: 1px solid red;
   line-height: 50px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -325,13 +325,65 @@ input[type=button] {
   -ms-flex: 1;
   flex: 1;
   text-align: center;
+  cursor: pointer;
 }
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput input {
+.loginPage .backLogin .right .loginsLeft .loginBox section .tabs span.act {
+  border-bottom: 2px solid #3083E7;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .inputSel {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .inputSel input {
   height: 40px;
   width: 256px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  text-indent: 10px;
+  border: 0;
+  outline: 0;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .inputSel i {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 30px;
+  margin-right: 10px;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .hide {
+  display: none;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput #codeBtn {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #fff;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section .loginBtn {
+  width: 325px;
+  height: 45px;
+  color: #fff;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #3083E7;
 }
 .loginPage .backLogin .right .loginsRight {
-  outline: 1px solid red;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -moz-box-flex: 1;
@@ -352,4 +404,11 @@ input[type=button] {
   font-size: 14px;
   line-height: 30px;
   text-align: center;
+}
+.loginPage .footer {
+  margin-bottom: 50px;
+}
+.loginPage .footer p {
+  text-align: center;
+  line-height: 30px;
 }

@@ -233,27 +233,24 @@ input[type=button] {
   padding: 0 20px;
 }
 .loginPage .backLogin {
-  background: green;
+  background: url("../images/bg.jpg") no-repeat center center;
   height: 100%;
   width: 100%;
   display: flex;
 }
 .loginPage .backLogin .left {
-  outline: 1px solid blue;
   flex: 1;
 }
 .loginPage .backLogin .right {
-  outline: 1px solid blue;
   flex: 1;
   display: flex;
   align-items: center;
 }
 .loginPage .backLogin .right .loginsLeft {
-  outline: 1px solid red;
   flex: 2;
 }
 .loginPage .backLogin .right .loginsLeft .loginBox {
-  outline: 1px solid blue;
+  overflow: hidden;
   width: 380px;
 }
 .loginPage .backLogin .right .loginsLeft .loginBox section {
@@ -263,21 +260,59 @@ input[type=button] {
   background: #ffffff;
   border-radius: 10px;
 }
+.loginPage .backLogin .right .loginsLeft .loginBox section .warning {
+  color: red;
+  text-align: center;
+}
 .loginPage .backLogin .right .loginsLeft .loginBox section .tabs {
-  outline: 1px solid red;
   line-height: 50px;
   display: flex;
 }
 .loginPage .backLogin .right .loginsLeft .loginBox section .tabs span {
   flex: 1;
   text-align: center;
+  cursor: pointer;
 }
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput input {
+.loginPage .backLogin .right .loginsLeft .loginBox section .tabs span.act {
+  border-bottom: 2px solid #3083E7;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .inputSel {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .inputSel input {
   height: 40px;
   width: 256px;
+  border-radius: 10px;
+  text-indent: 10px;
+  border: 0;
+  outline: 0;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .inputSel i {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 30px;
+  margin-right: 10px;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .hide {
+  display: none;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput #codeBtn {
+  border-radius: 10px;
+  background: #fff;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section .loginBtn {
+  width: 325px;
+  height: 45px;
+  color: #fff;
+  border-radius: 10px;
+  background: #3083E7;
 }
 .loginPage .backLogin .right .loginsRight {
-  outline: 1px solid red;
   flex: 1;
 }
 .loginPage .backLogin .right .loginsRight .qrCode {
@@ -294,4 +329,11 @@ input[type=button] {
   font-size: 14px;
   line-height: 30px;
   text-align: center;
+}
+.loginPage .footer {
+  margin-bottom: 50px;
+}
+.loginPage .footer p {
+  text-align: center;
+  line-height: 30px;
 }

@@ -22,24 +22,21 @@
         }
     }
     .backLogin {
-        // background: url('../images/back.jpg')no-repeat;
-        background: green;
-        @include wh(100%, 100%);
+        background: url('../images/bg.jpg')no-repeat center center;
+        @include wh(100%,
+        100%);
         display: flex;
         .left {
-            @include outline(blue);
             flex: 1;
         }
         .right {
-            @include outline(blue);
             flex: 1;
             display: flex;
             align-items: center;
             .loginsLeft {
-                @include outline;
                 flex: 2;
                 .loginBox {
-                    @include outline(blue);
+                    overflow: hidden;
                     width: 380px;
                     section {
                         &:nth-child(1) {
@@ -47,31 +44,73 @@
                             border-radius: 10px;
                         }
                         padding: 30px;
+                        .warning {
+                            color: red;
+                            text-align: center;
+                        }
                         .tabs {
-                            @include outline;
                             line-height: 50px;
                             display: flex;
                             span {
                                 flex: 1;
                                 text-align: center;
+                                cursor: pointer;
+                                &.act {
+                                    border-bottom: 2px solid #3083E7;
+                                }
                             }
                         }
                         .tabsInput {
-                            input {
-                                @include wh(256px, 40px)
+                            .inputSel {
+                                display: flex;
+                                flex-direction: row-reverse;
+                                align-items: center;
+                                // @include outline;
+                                margin-bottom: 10px;
+                                input {
+                                    @include wh(256px,
+                                    40px);
+                                    border-radius: 10px;
+                                    text-indent: 10px;
+                                    border: 0;
+                                    outline: 0;
+                                }
+                                i {
+                                    width: 40px;
+                                    height: 40px;
+                                    text-align: center;
+                                    line-height: 40px;
+                                    font-size: 30px;
+                                    margin-right: 10px;
+                                }
                             }
+                            .hide {
+                                display: none;
+                            }
+                            #codeBtn {
+                                border-radius: 10px;
+                                background: #fff;
+                            }
+                        }
+                        .loginBtn {
+                            width: 325px;
+                            height: 45px;
+                            color: #fff;
+                            border-radius: 10px;
+                            background: #3083E7;
                         }
                     }
                 }
             }
             .loginsRight {
-                @include outline;
                 flex: 1;
                 .qrCode {
                     // @include outline(blue);
-                    @include wh(200px, 200px);
+                    @include wh(200px,
+                    200px);
                     .imgCode {
-                        @include wh(180px, 180px);
+                        @include wh(180px,
+                        180px);
                         @include outline(blue);
                         margin: 0 auto;
                     }
@@ -84,5 +123,12 @@
                 }
             }
         }
+    }
+    .footer {
+        p {
+            text-align: center;
+            line-height: 30px;
+        }
+        margin-bottom: 50px;
     }
 }

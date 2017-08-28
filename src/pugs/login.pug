@@ -4,6 +4,10 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         link(href="../stylesheets/main.css",rel="stylesheet")
+        link(rel="stylesheet", href="//at.alicdn.com/t/font_398325_wd2b9a7fthvndn29.css")
+        link(rel="stylesheet", href="../framework/animate.css")
+        script(src="../framework/jq/zepto.min.js")
+        script(src="../javascripts/login.js")
         title 登录 | 云企商通
     body
       .containers.loginPage
@@ -21,22 +25,23 @@ html(lang="en")
           .loginsLeft
            .loginBox
             section
+             .warning 账号密码或企业号不匹配
              .tabs
-              span 短信登录
-              span 密码登录
+              span.sl.act 短信登录
+              span.sr 密码登录
              .tabsInput
               .inputSel
-               input(type="number",placeholder="企业号")
-               i 图标
+               input(type="number",placeholder="企业号",maxLength="11")
+               i.iconfont.icon-jigou_wushuju
               .inputSel
-               input(type="tel",placeholder="手机号")
-               i 图标
-              .inputSel
+               input(type="tel",placeholder="手机号",maxLength="11")
+               i.iconfont.icon-mobile
+              .inputSel.hide.pwds.bounceInLeft
                input(type="password",placeholder="密码")
-               i 图标
-              .inputSel
-               input(type="text")
-               input(type="button",value="获取验证码")
+               i.iconfont.icon-mma
+              .inputSel.codes.bounceInLeft
+               input(type="text",placeholder="验证码")
+               input#codeBtn(type="button",value="获取验证码",maxLength="11")
             section
              input.loginBtn(type="button",value="登录")
            
