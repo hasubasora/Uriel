@@ -1,0 +1,88 @@
+.loginPage {
+    flex-direction: column;
+    .logo {
+        width: 100%;
+        // @include wh(100%, 50px);
+        // @include outline;
+        padding: 27px;
+        ul {
+            display: flex;
+            li {
+                img {
+                    height: rem(60);
+                }
+                a {
+                    font-weight: 700;
+                    color: #3083E7;
+                    font-size: rem(30);
+                    line-height: rem(60);
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+    .backLogin {
+        // background: url('../images/back.jpg')no-repeat;
+        background: green;
+        @include wh(100%, 100%);
+        display: flex;
+        .left {
+            @include outline(blue);
+            flex: 1;
+        }
+        .right {
+            @include outline(blue);
+            flex: 1;
+            display: flex;
+            align-items: center;
+            .loginsLeft {
+                @include outline;
+                flex: 2;
+                .loginBox {
+                    @include outline(blue);
+                    width: 380px;
+                    section {
+                        &:nth-child(1) {
+                            background: #ffffff;
+                            border-radius: 10px;
+                        }
+                        padding: 30px;
+                        .tabs {
+                            @include outline;
+                            line-height: 50px;
+                            display: flex;
+                            span {
+                                flex: 1;
+                                text-align: center;
+                            }
+                        }
+                        .tabsInput {
+                            input {
+                                @include wh(256px, 40px)
+                            }
+                        }
+                    }
+                }
+            }
+            .loginsRight {
+                @include outline;
+                flex: 1;
+                .qrCode {
+                    // @include outline(blue);
+                    @include wh(200px, 200px);
+                    .imgCode {
+                        @include wh(180px, 180px);
+                        @include outline(blue);
+                        margin: 0 auto;
+                    }
+                    .qrCodeTxt {
+                        // @include outline(blue);
+                        font-size: 14px;
+                        line-height: 30px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

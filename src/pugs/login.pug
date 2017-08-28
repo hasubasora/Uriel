@@ -1,0 +1,50 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(href="../stylesheets/main.css",rel="stylesheet")
+        title 登录 | 云企商通
+    body
+      .containers.loginPage
+        section.logo
+         ul
+          li 
+           img(src="../images/jjb.png", alt="" width="120px" )
+          li 
+           a 云企商通
+          li 
+           a 登录
+        section.backLogin
+         .left
+         .right
+          .loginsLeft
+           .loginBox
+            section
+             .tabs
+              span 短信登录
+              span 密码登录
+             .tabsInput
+              .inputSel
+               input(type="number",placeholder="企业号")
+               i 图标
+              .inputSel
+               input(type="tel",placeholder="手机号")
+               i 图标
+              .inputSel
+               input(type="password",placeholder="密码")
+               i 图标
+              .inputSel
+               input(type="text")
+               input(type="button",value="获取验证码")
+            section
+             input.loginBtn(type="button",value="登录")
+           
+          .loginsRight
+           .qrCode
+            .imgCode 二维码
+            p.qrCodeTxt 云企商通App 扫一扫登录
+        section.footer
+         p 深圳市商沃科技发展有限公司   0755-88888888
+         p 地址：广东省广州市天河区天慧路3号C601
+         p Copyright © 2015 Shenzhen Sunaw.Co All Rights Reserved.  ICP备案号：粤ICP备案14100294号​-1  版权所有：©商沃科技      

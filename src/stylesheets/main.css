@@ -211,251 +211,87 @@ input[type=button] {
   cursor: pointer;
 }
 
-@font-face {
-  font-family: 'iconfont';
-  /* project id："135254" */
-  src: url("//at.alicdn.com/t/font_g1y8np82kyco9a4i.eot");
-  src: url("//at.alicdn.com/t/font_g1y8np82kyco9a4i.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_g1y8np82kyco9a4i.woff") format("woff"), url("//at.alicdn.com/t/font_g1y8np82kyco9a4i.ttf") format("truetype"), url("//at.alicdn.com/t/font_g1y8np82kyco9a4i.svg#iconfont") format("svg");
-}
-[class*=iconfont] {
-  font-family: "iconfont" !important;
-  font-size: 1rem;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/*<i class="iconfont">&#x33;</i>*/
-.flex_box {
-  display: flex;
-  /*上面两个的综合*/
-  /*在子元素没用flex的时候才生效*/
-  /*属性定义项目在交叉轴上如何对齐。上下的 有flex也可以用*/
-  /*属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。（真的没反应先放着）*/
-}
-.flex_box .flex_item {
-  border: 1px solid red;
-}
-.flex_box .flex_item:nth-child(1) {
-  flex-basis: 1;
-}
-.flex_box .flex_item:nth-child(2) {
-  flex-basis: 2;
-}
-.flex_box .flex_item:nth-child(3) {
-  flex-basis: 3;
-}
-.flex_box .flex_item:nth-child(4) {
-  flex-basis: 4;
-}
-.flex_box .flex_item:nth-child(5) {
-  flex-basis: 5;
-}
-
-.flex_inline_box {
-  display: inline-flex;
-}
-
 /*! Component 组件*/
-body {
-  background: url("../images/jjb.png") no-repeat;
-  background-size: contain;
-  background-color: #000;
-}
-
-.qeCodeBox {
-  top: 2.8125rem;
-  position: absolute;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.qeCodeBox .box_justify {
-  height: 100%;
-  width: 100%;
-  display: flex;
+.loginPage {
   flex-direction: column;
 }
-.qeCodeBox .box_justify .box_cq {
-  margin: 0 auto 0;
-  justify-content: center;
-  padding: 20px;
-  height: 100px;
+.loginPage .logo {
   width: 100%;
-  display: flex;
-  align-items: center;
+  padding: 27px;
 }
-.qeCodeBox .box_justify .box_cq:nth-child(2) {
-  height: 17.5rem;
-  width: 17.5rem;
-  margin-top: 0;
-  background: url("../images/1502938817.png") no-repeat;
-}
-.qeCodeBox .box_justify .box_cq .logo {
-  height: 60px;
-  width: 60px;
-}
-.qeCodeBox .box_justify .box_cq .logo img {
-  border-radius: 50px;
-  display: block;
-}
-.qeCodeBox .box_justify .box_cq .msg {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-}
-.qeCodeBox .box_justify .box_cq .msg > h5 {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.qeCodeBox .box_justify p {
-  margin: 10px auto;
-}
-
-#particles {
-  background-image: url("../images/back.jpg");
-}
-
-.loveBox {
-  width: 100%;
-}
-.loveBox img {
-  height: 100%;
-  width: 100%;
-}
-
-.btnbox {
-  position: absolute;
-  top: 0;
-  z-index: 22;
-  display: flex;
-  width: 100%;
-  margin-top: 14.0625rem;
-}
-.btnbox .btn {
-  height: 3.125rem;
-  width: 33.33333%;
-  float: left;
-  padding-left: 0.83333%;
-  padding-right: 0.83333%;
-  flex: 1;
-}
-
-.saveLove {
-  padding: 1.25rem;
-  position: absolute;
-  top: 19.375rem;
-  width: 90%;
-  background: #202743;
-  margin: 0 5%;
-  min-height: 18.75rem;
-  border-radius: 10px;
-}
-.saveLove .inputgl {
-  display: flex;
-  margin-bottom: 1.25rem;
-}
-.saveLove .inputgl input {
-  flex: 1;
-  height: 2.8125rem;
-  width: 100%;
-  text-indent: 20px;
-  border-radius: 10px;
-  background: #171d37;
-  border: 0;
-  outline: 0;
-  color: #fff;
-}
-.saveLove .inputgl span {
-  height: 2.8125rem;
-  width: 2.8125rem;
-  background: url("../images/ss.jpg") no-repeat;
-  background-size: contain;
-}
-.saveLove .inputlz {
-  align-items: center;
-  margin-bottom: 1.25rem;
+.loginPage .logo ul {
   display: flex;
 }
-.saveLove .inputlz img {
-  width: 3.75rem;
+.loginPage .logo ul li img {
   height: 3.75rem;
-  border-radius: 500px;
-  margin-right: 10px;
 }
-.saveLove .inputlz .nameBox {
-  flex: 1;
-  line-height: 1.25rem;
+.loginPage .logo ul li a {
+  font-weight: 700;
+  color: #3083E7;
+  font-size: 1.875rem;
+  line-height: 3.75rem;
+  padding: 0 20px;
 }
-.saveLove .inputlz .nameBox span,
-.saveLove .inputlz .nameBox p {
-  color: #fff;
-}
-.saveLove .inputlx {
-  margin-bottom: 1.25rem;
-  height: 200px;
+.loginPage .backLogin {
+  background: green;
+  height: 100%;
   width: 100%;
-  border-radius: 10px;
-  background: #171d37;
-  border: 0;
-  outline: 0;
-  color: #fff;
-  padding: 20px;
-}
-.saveLove .inputbt {
   display: flex;
-  margin-bottom: 1.25rem;
-  justify-content: space-between;
 }
-.saveLove .inputbt span {
-  width: 5rem;
-  height: 1.875rem;
-  display: inline-block;
-  text-align: center;
-  border-radius: 5px;
-  line-height: 1.875rem;
-  background: #fffc00;
+.loginPage .backLogin .left {
+  outline: 1px solid blue;
+  flex: 1;
 }
-.saveLove .txt {
-  color: #fff;
-  line-height: 1.875rem;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.saveLove .lovesLv {
+.loginPage .backLogin .right {
+  outline: 1px solid blue;
+  flex: 1;
   display: flex;
-  color: #ffffff;
   align-items: center;
-  font-size: 0.75rem;
-  padding-bottom: 0.625rem;
 }
-.saveLove .lovesLv .lv {
-  width: 2.5rem;
+.loginPage .backLogin .right .loginsLeft {
+  outline: 1px solid red;
+  flex: 2;
 }
-.saveLove .lovesLv .pic {
+.loginPage .backLogin .right .loginsLeft .loginBox {
+  outline: 1px solid blue;
+  width: 380px;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section {
+  padding: 30px;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section:nth-child(1) {
+  background: #ffffff;
+  border-radius: 10px;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section .tabs {
+  outline: 1px solid red;
+  line-height: 50px;
+  display: flex;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section .tabs span {
+  flex: 1;
+  text-align: center;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput input {
+  height: 40px;
+  width: 256px;
+}
+.loginPage .backLogin .right .loginsRight {
+  outline: 1px solid red;
   flex: 1;
 }
-.saveLove .lovesLv .pic img {
-  width: 3.125rem;
-  border-radius: 50px;
+.loginPage .backLogin .right .loginsRight .qrCode {
+  height: 200px;
+  width: 200px;
 }
-.saveLove .lovesLv .txts {
-  flex: 1;
+.loginPage .backLogin .right .loginsRight .qrCode .imgCode {
+  height: 180px;
+  width: 180px;
+  outline: 1px solid blue;
+  margin: 0 auto;
 }
-.saveLove .lovesLv .morau {
-  flex: 1;
-}
-
-.containers {
-  overflow: hidden;
-  position: relative;
-  flex: 1;
-}
-
-.scrollWrap {
-  position: absolute;
-  overflow: hidden;
+.loginPage .backLogin .right .loginsRight .qrCode .qrCodeTxt {
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
 }

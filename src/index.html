@@ -39,6 +39,14 @@
             document.execCommand("Copy");
             alert("复制成功!");
         });
+        // alert(getQueryString('departmentName'));
+
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURI(r[2]);
+            return null;
+        }
     </script>
 
 </body>

@@ -363,6 +363,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         ft.style.fontSize = w / s * 16 + "px";
     };
 })();
+
+// onmousewheel="return false;"
+$("[text=number]").addEventListener('DOMMouseScroll', MouseWheel, false);
+
+function MouseWheel(event) {
+    event = event || window.event;
+    event.preventDefault();
+}
 "use strict";
 
 /**
