@@ -74,6 +74,19 @@ const filter = {
                 }
             }
         }
-    }
+    },
+    countDown(codebtn) {
+        let a = 60;
+        timer = setInterval(function() {
+            if (a > 0) {
+                codebtn.attr("disabled", true).val("(" + a + ")重新获取").css("background", "#ccc");
+                a--;
+            } else {
+                clearInterval(timer);
+                codebtn.attr("disabled", false).val("获取验证码").css("background", "#eeeeee");
+                a = 60;
+            }
+        }, 1000);
 
+    }
 }

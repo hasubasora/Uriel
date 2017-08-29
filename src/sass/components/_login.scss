@@ -23,9 +23,10 @@
     }
     .backLogin {
         background: url('../images/bg.jpg')no-repeat center center;
-        @include wh(100%,
-        100%);
+        min-height: 500px;
+        width: 100%;
         display: flex;
+        margin-bottom: 50px;
         .left {
             flex: 1;
         }

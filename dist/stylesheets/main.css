@@ -255,13 +255,14 @@ input[type=button] {
 }
 .loginPage .backLogin {
   background: url("../images/bg.jpg") no-repeat center center;
-  height: 100%;
+  min-height: 500px;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 50px;
 }
 .loginPage .backLogin .left {
   -webkit-box-flex: 1;
