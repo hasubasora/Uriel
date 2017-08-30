@@ -351,6 +351,75 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = 'hello world!';
 'use strict';
 
+window.onload = function (params) {
+    // const applys = Vue.component('applys', {
+    //     template: '#applys', //用什么模板来渲染他
+    //     data() {
+    //         return {
+    //             appList: [{
+    //                 name: '进销存'
+    //             }, {
+    //                 name: 'ERP'
+    //             }, {
+    //                 name: '建站'
+    //             }, {
+    //                 name: '渠道交易'
+    //             }]
+    //         }
+    //     },
+    // })
+    var UserHome = Vue.component('UserHome', {
+        template: '#UserHome' //用什么模板来渲染他
+    });
+    var UserProfile = Vue.component('UserProfile', {
+        template: '#UserProfile', //用什么模板来渲染他
+        data: function data() {
+            return {
+                appList: [{
+                    name: '进销存',
+                    urls: '/'
+                }, {
+                    name: 'ERP'
+                }, {
+                    name: '建站'
+                }, {
+                    name: '渠道交易'
+                }]
+            };
+        }
+    });
+    var routes = [{
+        path: '/UserProfile',
+        component: UserProfile
+    }, {
+        path: '/UserHome',
+        component: UserHome
+    }, { path: '/', redirect: '/UserProfile' //404
+    }];
+    var router = new VueRouter({
+        // mode: 'history',
+        routes: routes, // （缩写）相当于 routes: routes
+        linkActiveClass: 'linkActive' //激活后的连接颜色Class
+
+    });
+    var app = new Vue({
+        el: '#container',
+        router: router,
+        data: function data() {
+            return {
+                apply: [{
+                    name: '应用',
+                    url: "/UserProfile"
+                }, {
+                    name: '其他',
+                    url: "/UserHome"
+                }]
+            };
+        }
+    });
+};
+'use strict';
+
 $(function () {
     var logins = {
         init: function init() {
@@ -691,4 +760,123 @@ var month = {
         var _atr = art.toString(); //转出object
     }
 
+};
+'use strict';
+
+window.onload = function (params) {
+    // const applys = Vue.component('applys', {
+    //     template: '#applys', //用什么模板来渲染他
+    //     data() {
+    //         return {
+    //             appList: [{
+    //                 name: '进销存'
+    //             }, {
+    //                 name: 'ERP'
+    //             }, {
+    //                 name: '建站'
+    //             }, {
+    //                 name: '渠道交易'
+    //             }]
+    //         }
+    //     },
+    // })
+    var goodsListPage = Vue.component('goodsListPage', {
+        template: '#goodsListPage' //用什么模板来渲染他
+    });
+    var shopHomePage = Vue.component('shopHomePage', {
+        template: '#shopHomePage', //用什么模板来渲染他
+        data: function data() {
+            return {
+                shopList: [{
+                    logoUrl: '',
+                    shopName: '广州市第一人民医院',
+                    toShopUrl: '/',
+                    ter: [{
+                        tit: '订单金额',
+                        pic: '22222'
+                    }, {
+                        tit: '订单数量',
+                        pic: '22222'
+                    }, {
+                        tit: '商品数量',
+                        pic: '22222'
+                    }]
+                }, {
+                    logoUrl: '',
+                    shopName: '广州市第一人民医院2',
+                    toShopUrl: '/',
+                    ter: [{
+                        tit: '订单金额',
+                        pic: '22222'
+                    }, {
+                        tit: '订单数量',
+                        pic: '22222'
+                    }, {
+                        tit: '商品数量',
+                        pic: '22222'
+                    }]
+                }, {
+                    logoUrl: '',
+                    shopName: '广州市第一人民医院3',
+                    toShopUrl: '/',
+                    ter: [{
+                        tit: '订单金额',
+                        pic: '22222'
+                    }, {
+                        tit: '订单数量',
+                        pic: '22222'
+                    }, {
+                        tit: '商品数量',
+                        pic: '22222'
+                    }]
+                }, {
+                    logoUrl: '',
+                    shopName: '广州市第一人民医院',
+                    toShopUrl: '/',
+                    ter: [{
+                        tit: '订单金额',
+                        pic: '22222'
+                    }, {
+                        tit: '订单数量',
+                        pic: '22222'
+                    }, {
+                        tit: '商品数量',
+                        pic: '22222'
+                    }]
+                }]
+            };
+        }
+    });
+    var routes = [{
+        path: '/shopHomePage',
+        component: shopHomePage
+    }, {
+        path: '/goodsListPage',
+        component: goodsListPage
+    }, { path: '/', redirect: '/shopHomePage' //404
+    }];
+    var router = new VueRouter({
+        // mode: 'history',
+        routes: routes, // （缩写）相当于 routes: routes
+        linkActiveClass: 'linkActive' //激活后的连接颜色Class
+
+    });
+    var app = new Vue({
+        el: '#container',
+        router: router,
+        data: function data() {
+            return {
+                apply: [{
+                    name: '首页',
+                    url: "/shopHomePage"
+                }, {
+                    name: '产品管理',
+                    url: "/goodsListPage"
+                }, {
+                    name: '店铺管理',
+                    url: "/shopPage"
+                }]
+            };
+        }
+    });
 };

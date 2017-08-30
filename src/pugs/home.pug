@@ -1,0 +1,50 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="../framework/bootstrap.min.css")
+        script(src="../framework/vue/vue.js")
+        script(src="../framework/vue/vue-router.js")
+        script(src="../javascripts/home.js")
+        title 云企商通 
+    body
+     #container
+      .row
+       .col-sm-12
+        .col-sm-1 
+         img(src="../images/psb.jpg", alt="",width="100",height="73")
+        .col-sm-2
+          h2 云企商通 
+        .col-sm-9 
+         ul.list-inline
+          li(v-for="item in apply")
+           router-link(:to="item.url")
+            h2 {{item.name}}
+      .row     
+       .col-sm-12
+        router-view
+     template#UserProfile
+      .col-sm-12
+       .col-sm-2
+        ul.list-group 
+         li.list-group-item
+          router-link(to="/") 应用
+       .col-sm-10
+        h3 应用
+        .col-sm-12 
+         .row
+          router-link(to="/",v-for="items in appList",role="button") 
+           .col-sm-4.col-md-2
+            .thumbnail
+             img(src="../images/psb.jpg", alt="",width="100",height='100')
+             .caption
+              h3(style="text-align:center") {{items.name}}
+          
+     template#UserHome 
+      .box 占位置
+
+
+
+
+      
