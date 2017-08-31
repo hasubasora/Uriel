@@ -13,21 +13,21 @@ html(lang="en")
          }
         title 云企商通 | 商店首页
     body
-    #container
-     .row
-      .col-sm-12
-       .col-sm-1 
-        img(src="../images/psb.jpg", alt="",width="100",height="73")
-       .col-sm-2
-         h2 云企商通 
-       .col-sm-9 
-        ul.list-inline(v-cloak)
-         li(v-for="item in apply")
-          router-link(:to="item.url")
-           h2 {{item.name}}
-     .row     
-      .col-sm-12
-       router-view
+     #container.container-fluid
+      .row
+       .col-sm-12
+        .col-sm-1 
+         img(src="../images/psb.jpg", alt="",width="100",height="73")
+        .col-sm-2
+          h2 云企商通 
+        .col-sm-9 
+         ul.list-inline(v-cloak)
+          li(v-for="item in apply")
+           router-link(:to="item.url")
+            h2 {{item.name}}
+      .row     
+       .col-sm-12
+        router-view
     template#shopHomePage
      .col-sm-12 
       .col-sm-2
@@ -55,3 +55,25 @@ html(lang="en")
           
     template#goodsListPage 
      .box 占位置
+    template#shopPage 
+     .row 
+      .col-sm-2.col-xs-12
+       .row
+        h3(v-for="shops in leftList") {{shops.title}}
+         .list-group
+          router-link.list-group-item(to="/",v-for="itemShops in shops.titleLists") {{itemShops.tit}}
+      .col-sm-10.col-xs-12
+       .row 
+        span 当前店铺：广州市第一商贸集团天河店
+         router-link(to="/") 切换店铺
+       .row 
+        .col-sm-12
+         .col-sm-6 
+          h3 商品列表
+         .col-sm-6 
+          h3
+           a.btn.btn-info.pull-right 上传商品
+       .row
+        .col-sm-12 111111111   
+          
+

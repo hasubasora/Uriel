@@ -413,8 +413,21 @@ window.onload = function (params) {
                 }, {
                     name: '其他',
                     url: "/UserHome"
+                }],
+                compName: [{
+                    companyName: '好长好长的公司名啊',
+                    accountSn: '111111'
+                }, {
+                    companyName: '好长好长的公司名啊1',
+                    accountSn: '111111'
                 }]
             };
+        },
+
+        methods: {
+            switchComp: function switchComp() {
+                alert(2);
+            }
         }
     });
 };
@@ -764,22 +777,32 @@ var month = {
 'use strict';
 
 window.onload = function (params) {
-    // const applys = Vue.component('applys', {
-    //     template: '#applys', //用什么模板来渲染他
-    //     data() {
-    //         return {
-    //             appList: [{
-    //                 name: '进销存'
-    //             }, {
-    //                 name: 'ERP'
-    //             }, {
-    //                 name: '建站'
-    //             }, {
-    //                 name: '渠道交易'
-    //             }]
-    //         }
-    //     },
-    // })
+    var shopPage = Vue.component('shopPage', {
+        template: '#shopPage', //用什么模板来渲染他
+        data: function data() {
+            return {
+                leftList: [{
+                    title: '店铺',
+                    titleLists: [{
+                        tit: '店铺管理',
+                        url: 'xxx'
+                    }]
+                }, {
+                    title: '商品管理',
+                    titleLists: [{
+                        tit: '店铺商品列表',
+                        url: 'xxx'
+                    }, {
+                        tit: '商品分类管理',
+                        url: 'xxx'
+                    }, {
+                        tit: '商品标签管理',
+                        url: 'xxx'
+                    }]
+                }]
+            };
+        }
+    });
     var goodsListPage = Vue.component('goodsListPage', {
         template: '#goodsListPage' //用什么模板来渲染他
     });
@@ -853,6 +876,9 @@ window.onload = function (params) {
     }, {
         path: '/goodsListPage',
         component: goodsListPage
+    }, {
+        path: '/shopPage',
+        component: shopPage
     }, { path: '/', redirect: '/shopHomePage' //404
     }];
     var router = new VueRouter({

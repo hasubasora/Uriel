@@ -61,9 +61,21 @@ window.onload = function(params) {
                 }, {
                     name: '其他',
                     url: "/UserHome"
+                }],
+                compName: [{
+                    companyName: '好长好长的公司名啊',
+                    accountSn: '111111'
+                }, {
+                    companyName: '好长好长的公司名啊1',
+                    accountSn: '111111'
                 }]
             }
         },
+        methods: {
+            switchComp() {
+                alert(2)
+            }
+        }
     })
 
 }
