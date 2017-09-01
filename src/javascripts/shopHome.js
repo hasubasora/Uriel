@@ -92,6 +92,10 @@ window.onload = function(params) {
             }
         },
     })
+    const categoryList = Vue.component('categoryList', {
+        template: '#categoryList', //用什么模板来渲染他
+    });
+
     const routes = [{
             path: '/shopHomePage',
             component: shopHomePage,
