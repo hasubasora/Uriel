@@ -1,0 +1,125 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="../framework/animate.css" type="text/css"/>
+    <script src="../framework/vue/vue.js"></script>
+    <title>animate过度 </title>
+  </head>
+  <body>
+    <div id="example">
+      <input type="text" v-model="show"/>
+      <transition-group enter-active-class="animated tada" leave-active-class="animated bounceOutRight" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @enter-cancelled="enterCancelled" @before-leave="beforeLeave" @leave="leave" @after-leave="afterLeave" @leave-cancelled="leaveCancelled">
+        <div class="look" v-if="show" v-for="(item,index) in goodsLists" :key="index">{{item.orderStatus}}
+          <div class="goods" v-for="items in item.list">{{items.goodsId}}</div>
+        </div>
+      </transition-group>
+    </div>
+  </body>
+  <script>
+    new Vue({
+        el: '#example',
+        data() {
+            return {
+                show:"",
+                goodsList: [{
+                    'nextTime': '2017年7月24日12:08:58',
+                    'orderStatus': 3, //0 未付款 1 已付款 2 已取消 3 已完成
+                    'totalPrices': 0,
+                    list: [{
+                        'src': 'framework/lg.jpg',
+                        'goodsId': '0031665',
+                        'commodityImg': 'images/111.jpg',
+                        'title': '第一个商品的第一个',
+                        'price': '20', //金额
+                        'values': 2, //数量
+                    }, {
+                        'src': 'framework/lg.jpg',
+                        'goodsId': '0031665',
+                        'commodityImg': 'images/111.jpg',
+                        'title': '第一个商品的第児个',
+                        'price': '20.10', //金额
+                        'values': 4, //数量
+                    }]
+                }, {
+                    'nextTime': '2017年7月24日12:08:58',
+                    'orderStatus': 1, //0 未付款 1 已付款 2 已取消 3 已完成
+                    'totalPrices': 1000,
+                    list: [{
+                        'src': 'framework/lg.jpg',
+                        'goodsId': '0031665',
+                        'commodityImg': 'images/111.jpg',
+                        'title': '第二个商品的第一个',
+                        'price': '220', //金额
+                        'values': 1, //数量
+    
+                    }, {
+                        'src': 'framework/lg.jpg',
+                        'goodsId': '0031665',
+                        'commodityImg': 'images/111.jpg',
+                        'title': '第二个商品的第二个',
+                        'price': '20.30', //金额
+                        'values': 4, //数量
+                    }, ]
+                }, {
+                    'nextTime': '2017年7月24日13:08:58',
+                    'orderStatus': 2, //0 未付款 1 已付款 2 已取消 3 已完成
+                    'totalPrices': 10100,
+                    list: [{
+                        'src': 'framework/lg.jpg',
+                        'goodsId': '0031665',
+                        'commodityImg': 'images/111.jpg',
+                        'title': '第三个商品的第一个',
+                        'price': '220', //金额
+                        'values': 1, //数量
+                    }, ]
+                }],
+            }
+        },
+    
+        computed:{
+            goodsLists(){//找到相同的才显示
+                var arr=[];
+                this.goodsList.forEach(function(val){
+                    console.info(val.orderStatus==2)
+                    if(val.orderStatus==this.show){
+                        arr.push(val);
+                    }
+                }.bind(this));
+                return arr;
+            }
+        },
+        methods:{
+            //进入中
+            beforeEnter(el){
+                 console.info('进入动画执行之前')
+            },
+            enter(el,done){
+                 console.info('进入动画执行')
+                 console.info(done)
+            },
+            afterEnter(el){
+                 console.info('进入动画执行之后')
+            },
+            enterCancelled(el){
+                 console.info('???')
+            },
+            //离开
+            beforeLeave(el){
+                 console.info('离开执行之前')
+            },
+            leave(el){
+                 console.info('离开执行')
+            }, 
+            afterLeave(el){
+                 console.info('离开执行之后')
+            }, 
+            leaveCancelled(el){
+                 console.info('？？？')
+            },
+        }
+    })
+  </script>
+</html>

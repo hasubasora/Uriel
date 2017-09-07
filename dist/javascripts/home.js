@@ -71,10 +71,17 @@ window.onload = function(params) {
                 }]
             }
         },
+        mounted() {
+            this.switchComp();
+        },
         methods: {
             switchComp() {
-                alert(2)
+                alert('监听路由变化')
             }
+        },
+        watch: {
+            // 如果路由有变化，会再次执行该方法
+            "$route": "switchComp"
         }
     })
 

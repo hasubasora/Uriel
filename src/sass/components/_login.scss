@@ -22,6 +22,7 @@
         }
     }
     .backLogin {
+        @include text-hide;
         background: url('../images/bg.jpg')no-repeat center center;
         min-height: 500px;
         width: 100%;

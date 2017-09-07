@@ -254,6 +254,9 @@ input[type=button] {
   padding: 0 20px;
 }
 .loginPage .backLogin {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   background: url("../images/bg.jpg") no-repeat center center;
   min-height: 500px;
   width: 100%;
