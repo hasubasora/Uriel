@@ -115,6 +115,14 @@ $legacy-support-for-ie:true;
     @return ($se/$base)*1rem;
 }
 
+@mixin text-hide-height($num:2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    box-orient: vertical;
+    line-clamp: $num;
+}
+
 // @function screen($screen){
 //   @if $screen==lg{
 //      @return (max-width 1180px) (min-width 980px);
