@@ -1,167 +1,73 @@
 @charset "UTF-8";
-
 /*! Vendor*/
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-    font-size: 100%;
-    vertical-align: baseline;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
 html {
-    line-height: 1;
+  line-height: 1;
 }
 
-ol,
-ul {
-    list-style: none;
+ol, ul {
+  list-style: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-caption,
-th,
-td {
-    text-align: left;
-    font-weight: normal;
-    vertical-align: middle;
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
 }
 
-q,
-blockquote {
-    quotes: none;
+q, blockquote {
+  quotes: none;
 }
-
-q:before,
-q:after,
-blockquote:before,
-blockquote:after {
-    content: "";
-    content: none;
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
 }
 
 a img {
-    border: none;
+  border: none;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary {
-    display: block;
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
 }
-
 
 /*! normalize.css v3.0.0 | Base | MIT License | git.io/normalize */
-
 html {
-    font-family: sans-serif;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
-
 /*! normalize.css v3.0.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
-
 article,
 aside,
 details,
@@ -174,88 +80,76 @@ main,
 nav,
 section,
 summary {
-    display: block;
+  display: block;
 }
 
 audio,
 canvas,
 progress,
 video {
-    display: inline-block;
-    vertical-align: baseline;
+  display: inline-block;
+  vertical-align: baseline;
 }
 
 audio:not([controls]) {
-    display: none;
-    height: 0;
+  display: none;
+  height: 0;
 }
 
 [hidden],
 template {
-    display: none;
+  display: none;
 }
 
-
 /*! normalize.css v3.0.0 | Links | MIT License | git.io/normalize */
-
 a {
-    background: transparent;
+  background: transparent;
 }
 
 a:active,
 a:hover {
-    outline: 0;
+  outline: 0;
 }
-
 
 /*! Helpers*/
-
-
 /*常用颜色*/
-
-
 /*！layout 布局*/
-
-*,
-*:before,
-*:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-
 /*清除UC默认*/
-
 * {
-    -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none !important;
-    margin: 0;
+  -webkit-appearance: none !important;
+  margin: 0;
 }
 
 input[type="number"] {
-    -moz-appearance: textfield;
+  -moz-appearance: textfield;
 }
 
 html,
 body {
-    font-family: "黑体";
-    font-size: 100%;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    color: #555;
+  font-family: "黑体";
+  font-size: 100%;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: #555;
 }
 
 html *,
 html *:before,
 html *:after {
-    box-sizing: border-box;
-    transition: 0.1s;
+  box-sizing: border-box;
+  transition: 0.1s;
 }
 
 html i,
@@ -263,224 +157,187 @@ html em,
 html b,
 html strong,
 html span {
-    -webkit-transition: none;
-    transition: none;
+  -webkit-transition: none;
+  transition: none;
 }
 
 .container {
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    *zoom: 1;
-    display: flex;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  *zoom: 1;
+  display: flex;
 }
-
 .container:after {
-    content: " ";
-    display: block;
-    clear: both;
+  content: " ";
+  display: block;
+  clear: both;
 }
-
-.container:before,
-.container:after {
-    content: "";
-    display: table;
+.container:before, .container:after {
+  content: "";
+  display: table;
 }
-
 .container:after {
-    clear: both;
-    overflow: hidden;
+  clear: both;
+  overflow: hidden;
 }
 
 .containers {
-    width: 100%;
-    *zoom: 1;
-    display: flex;
+  width: 100%;
+  *zoom: 1;
+  display: flex;
 }
-
-.containers:before,
-.containers:after {
-    content: "";
-    display: table;
+.containers:before, .containers:after {
+  content: "";
+  display: table;
 }
-
 .containers:after {
-    clear: both;
-    overflow: hidden;
+  clear: both;
+  overflow: hidden;
 }
 
 a {
-    text-decoration: none;
-    color: #555;
+  text-decoration: none;
+  color: #555;
 }
-
 a:active {
-    color: #dedede;
+  color: #dedede;
 }
 
 button,
 input[type=button] {
-    outline: none;
-    border: none;
-    cursor: pointer;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
-
 
 /*! Component 组件*/
-
 .loginPage {
-    flex-direction: column;
+  flex-direction: column;
 }
-
 .loginPage .logo {
-    width: 100%;
-    padding: 27px;
+  width: 100%;
+  padding: 27px;
 }
-
 .loginPage .logo ul {
-    display: flex;
+  display: flex;
 }
-
 .loginPage .logo ul li img {
-    height: 3.75rem;
+  height: 3.75rem;
 }
-
 .loginPage .logo ul li a {
-    font-weight: 700;
-    color: #3083E7;
-    font-size: 1.875rem;
-    line-height: 3.75rem;
-    padding: 0 20px;
+  font-weight: 700;
+  color: #3083E7;
+  font-size: 1.875rem;
+  line-height: 3.75rem;
+  padding: 0 20px;
 }
-
 .loginPage .backLogin {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    background: url("../images/bg.jpg") no-repeat center center;
-    min-height: 500px;
-    width: 100%;
-    display: flex;
-    margin-bottom: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background: url("../images/bg.jpg") no-repeat center center;
+  min-height: 500px;
+  width: 100%;
+  display: flex;
+  margin-bottom: 50px;
 }
-
 .loginPage .backLogin .left {
-    flex: 1;
+  flex: 1;
 }
-
 .loginPage .backLogin .right {
-    flex: 1;
-    display: flex;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
-
 .loginPage .backLogin .right .loginsLeft {
-    flex: 2;
+  flex: 2;
 }
-
 .loginPage .backLogin .right .loginsLeft .loginBox {
-    overflow: hidden;
-    width: 380px;
+  overflow: hidden;
+  width: 380px;
 }
-
 .loginPage .backLogin .right .loginsLeft .loginBox section {
-    padding: 30px;
+  padding: 30px;
 }
-
 .loginPage .backLogin .right .loginsLeft .loginBox section:nth-child(1) {
-    background: #ffffff;
-    border-radius: 10px;
+  background: #ffffff;
+  border-radius: 10px;
 }
-
 .loginPage .backLogin .right .loginsLeft .loginBox section .warning {
-    color: red;
-    text-align: center;
+  color: red;
+  text-align: center;
 }
-
 .loginPage .backLogin .right .loginsLeft .loginBox section .tabs {
-    line-height: 50px;
-    display: flex;
+  line-height: 50px;
+  display: flex;
 }
-
 .loginPage .backLogin .right .loginsLeft .loginBox section .tabs span {
-    flex: 1;
-    text-align: center;
-    cursor: pointer;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
 }
-
 .loginPage .backLogin .right .loginsLeft .loginBox section .tabs span.act {
-    border-bottom: 2px solid #3083E7;
+  border-bottom: 2px solid #3083E7;
 }
-
 .loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .inputSel {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-bottom: 10px;
 }
-
 .loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .inputSel input {
-    height: 40px;
-    width: 256px;
-    border-radius: 10px;
-    text-indent: 10px;
-    border: 0;
-    outline: 0;
+  height: 40px;
+  width: 256px;
+  border-radius: 10px;
+  text-indent: 10px;
+  border: 0;
+  outline: 0;
 }
-
 .loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .inputSel i {
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    font-size: 30px;
-    margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 30px;
+  margin-right: 10px;
 }
-
 .loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .hide {
-    display: none;
+  display: none;
 }
-
 .loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput #codeBtn {
-    border-radius: 10px;
-    background: #fff;
+  border-radius: 10px;
+  background: #fff;
 }
-
 .loginPage .backLogin .right .loginsLeft .loginBox section .loginBtn {
-    width: 325px;
-    height: 45px;
-    color: #fff;
-    border-radius: 10px;
-    background: #3083E7;
+  width: 325px;
+  height: 45px;
+  color: #fff;
+  border-radius: 10px;
+  background: #3083E7;
 }
-
 .loginPage .backLogin .right .loginsRight {
-    flex: 1;
+  flex: 1;
 }
-
 .loginPage .backLogin .right .loginsRight .qrCode {
-    height: 200px;
-    width: 200px;
+  height: 200px;
+  width: 200px;
 }
-
 .loginPage .backLogin .right .loginsRight .qrCode .imgCode {
-    height: 180px;
-    width: 180px;
-    outline: 1px solid blue;
-    margin: 0 auto;
+  height: 180px;
+  width: 180px;
+  outline: 1px solid blue;
+  margin: 0 auto;
 }
-
 .loginPage .backLogin .right .loginsRight .qrCode .qrCodeTxt {
-    font-size: 14px;
-    line-height: 30px;
-    text-align: center;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
 }
-
 .loginPage .footer {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
-
 .loginPage .footer p {
-    text-align: center;
-    line-height: 30px;
+  text-align: center;
+  line-height: 30px;
 }
