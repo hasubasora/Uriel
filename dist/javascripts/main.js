@@ -290,12 +290,12 @@ var filter = {
      * @param reg
      */
     character: function character(char, reg) {
-        return char ? reg || /[$￥#~`!！@%^…&*()_+-=【】\{\}\[\]|、\\:;：；‘’\'\"“”\<\>?《》？，。、]/g.test(char) : '';
-        // console.log(reg.test(tel))
+        return char ? reg || /[\{\}\[\]|、\\:;：；‘’\'\"“”\<\>?《》？，。、$*￥#~`!！@\%\^\…\&\*\(\)\_\+\-\=【】]/g.test(char) : '';
     },
 
     /**
      * 是否为表情包
+     * @param {*} substring 
      */
     isEmoji: function isEmoji(substring) {
         for (var i = 0; i < substring.length; i++) {
@@ -328,11 +328,16 @@ var filter = {
             }
         }
     },
+
+    /**
+     * 倒计时
+     * @param {*} codebtn 
+     */
     countDown: function countDown(codebtn) {
         var a = 60;
         timer = setInterval(function () {
             if (a > 0) {
-                codebtn.attr("disabled", true).val("(" + a + ")重新获取").css("background", "#ccc");
+                codebtn.attr("disabled", true).val("(" + a + ")倒计时").css("background", "#ccc");
                 a--;
             } else {
                 clearInterval(timer);

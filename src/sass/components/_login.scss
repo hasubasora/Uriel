@@ -40,6 +40,8 @@
                 .loginBox {
                     overflow: hidden;
                     width: 380px;
+                    float: right;
+                    margin-right: 10px;
                     section {
                         &:nth-child(1) {
                             background: #ffffff;
@@ -94,12 +96,15 @@
                                 background: #fff;
                             }
                         }
-                        .loginBtn {
-                            width: 325px;
-                            height: 45px;
-                            color: #fff;
-                            border-radius: 10px;
-                            background: #3083E7;
+                        &.nopadding {
+                            padding: 20px 0;
+                            .loginBtn {
+                                width: 100%;
+                                height: 45px;
+                                color: #fff;
+                                border-radius: 10px;
+                                background: #3083E7;
+                            }
                         }
                     }
                 }
@@ -108,8 +113,8 @@
                 flex: 1;
                 .qrCode {
                     // @include outline(blue);
-                    @include wh(200px,
-                    200px);
+                    @include wh( 180px,
+                    250px);
                     .imgCode {
                         @include wh(180px,
                         180px);

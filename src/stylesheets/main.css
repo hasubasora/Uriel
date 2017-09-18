@@ -256,6 +256,8 @@ input[type=button] {
 .loginPage .backLogin .right .loginsLeft .loginBox {
   overflow: hidden;
   width: 380px;
+  float: right;
+  margin-right: 10px;
 }
 .loginPage .backLogin .right .loginsLeft .loginBox section {
   padding: 30px;
@@ -309,8 +311,11 @@ input[type=button] {
   border-radius: 10px;
   background: #fff;
 }
-.loginPage .backLogin .right .loginsLeft .loginBox section .loginBtn {
-  width: 325px;
+.loginPage .backLogin .right .loginsLeft .loginBox section.nopadding {
+  padding: 20px 0;
+}
+.loginPage .backLogin .right .loginsLeft .loginBox section.nopadding .loginBtn {
+  width: 100%;
   height: 45px;
   color: #fff;
   border-radius: 10px;
@@ -320,8 +325,8 @@ input[type=button] {
   flex: 1;
 }
 .loginPage .backLogin .right .loginsRight .qrCode {
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 180px;
 }
 .loginPage .backLogin .right .loginsRight .qrCode .imgCode {
   height: 180px;
