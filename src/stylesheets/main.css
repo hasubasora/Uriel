@@ -212,137 +212,81 @@ input[type=button] {
 }
 
 /*! Component 组件*/
-.loginPage {
-  flex-direction: column;
-}
-.loginPage .logo {
-  width: 100%;
-  padding: 27px;
-}
-.loginPage .logo ul {
-  display: flex;
-}
-.loginPage .logo ul li img {
-  height: 3.75rem;
-}
-.loginPage .logo ul li a {
-  font-weight: 700;
-  color: #3083E7;
-  font-size: 1.875rem;
-  line-height: 3.75rem;
-  padding: 0 20px;
-}
-.loginPage .backLogin {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  background: url("../images/bg.jpg") no-repeat center center;
-  min-height: 500px;
-  width: 100%;
-  display: flex;
-  margin-bottom: 50px;
-}
-.loginPage .backLogin .left {
-  flex: 1;
-}
-.loginPage .backLogin .right {
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-.loginPage .backLogin .right .loginsLeft {
-  flex: 2;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox {
-  overflow: hidden;
-  width: 380px;
-  float: right;
-  margin-right: 10px;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section {
-  padding: 30px;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section:nth-child(1) {
-  background: #ffffff;
-  border-radius: 10px;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section .warning {
-  color: red;
-  text-align: center;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabs {
-  line-height: 50px;
-  display: flex;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabs span {
-  flex: 1;
-  text-align: center;
-  cursor: pointer;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabs span.act {
-  border-bottom: 2px solid #3083E7;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .inputSel {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .inputSel input {
+section .nav_header {
   height: 40px;
-  width: 256px;
-  border-radius: 10px;
-  text-indent: 10px;
-  border: 0;
-  outline: 0;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .inputSel i {
-  width: 40px;
-  height: 40px;
-  text-align: center;
   line-height: 40px;
-  font-size: 30px;
-  margin-right: 10px;
+  display: flex;
+  background: #f2f2f2;
 }
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .hide {
-  display: none;
+section .nav_header > span {
+  flex: 1;
+  text-align: center;
 }
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput #codeBtn {
-  border-radius: 10px;
-  background: #fff;
+section .nav_header > span.active {
+  background: #0a2165;
+  color: #f2f2f2;
 }
-.loginPage .backLogin .right .loginsLeft .loginBox section.nopadding {
-  padding: 20px 0;
+section section .lately ul {
+  text-align: center;
+  display: flex;
 }
-.loginPage .backLogin .right .loginsLeft .loginBox section.nopadding .loginBtn {
-  width: 100%;
-  height: 45px;
-  color: #fff;
-  border-radius: 10px;
-  background: #3083E7;
+section section .lately ul li {
+  flex: 1;
+  padding: 10px 0;
+  line-height: 1.2;
 }
-.loginPage .backLogin .right .loginsRight {
+section section .lately ul li > span {
+  font-size: 18px;
+}
+section section .lately .payUp .dates img {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+  float: left;
+  margin-top: 10px;
+}
+section section .lately .payUp .payMsg {
+  display: flex;
+}
+section section .lately .payUp .payMsg > span {
   flex: 1;
 }
-.loginPage .backLogin .right .loginsRight .qrCode {
-  height: 250px;
-  width: 180px;
+section section .lately .payUp .payMsg > span:nth-last-child(1) {
+  text-align: right;
 }
-.loginPage .backLogin .right .loginsRight .qrCode .imgCode {
-  height: 180px;
-  width: 180px;
-  outline: 1px solid blue;
-  margin: 0 auto;
-}
-.loginPage .backLogin .right .loginsRight .qrCode .qrCodeTxt {
-  font-size: 14px;
-  line-height: 30px;
+section section .lately .payUp .btm {
   text-align: center;
 }
-.loginPage .footer {
-  margin-bottom: 50px;
+section section .lately .pays {
+  display: flex;
+  padding: 10px 0;
 }
-.loginPage .footer p {
+section section .lately .pays > section {
+  flex: 1;
   text-align: center;
-  line-height: 30px;
+}
+section section .lately .pays > section > span {
+  font-size: 18px;
+}
+
+.borders, section section .lately ul, section section .lately .payUp .dates, section section .lately .payUp .payMsg, section section .lately .pays {
+  border-bottom: 1px solid #ccc;
+}
+
+.h30, section section .lately .payUp .dates, section section .lately .payUp .payMsg, section section .lately .payUp .btm {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+}
+
+.selecteds, section section .lately ul li .selected, section section .lately .pays > section .selected {
+  outline: none;
+  height: 30px;
+  width: 70px;
+  border-radius: 30px;
+  padding: 0 10px;
+}
+
+.none {
+  display: none;
 }
