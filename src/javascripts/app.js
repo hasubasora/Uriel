@@ -147,3 +147,21 @@ Agumon.prototype = {
 
 };
 var agumon = new Agumon();
+
+
+
+$.ajax({
+    type: "POST",
+    url: "handle",
+    data: { 'userName': $("#user").val(), 'password': $('#pwd').val() },
+    dataType: "json",
+    success: function(data) {
+        if (data.status) {
+            //{"name":"bobo","password":"123","status":1}
+            $('#box').html('欢迎登陆' + data.name + '密码' + data.password);
+            alert('成功了')
+        } else {
+            alert('失败了')
+        }
+    }
+})

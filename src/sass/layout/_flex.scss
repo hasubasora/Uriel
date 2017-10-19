@@ -36,10 +36,11 @@
                 @debug($e)
             }
         }
-        // flex-grow: 1;//默认为0，即如果存在剩余空间，也不放大。 几份就是几份大
+        // flex-grow: 1; //默认为0，即如果存在剩余空间，也不放大。 几份就是几份大
         // flex-shrink: 1;如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。
-        // flex-basis
-        // align-self
+        // flex-basis:250px 元素在主轴上占据空间
+        // flex: grow shrink basis
+        // align-self:flex-start| flex-end | center定义元素自身的对齐方式
     }
 }
 
