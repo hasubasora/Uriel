@@ -1,0 +1,83 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="../stylesheets/main.css")
+        title 资金明细
+    body
+     section
+      nav.nav_header
+       span.sub.active 近7日
+       span.sub 充值
+       span.sub 提款
+      section
+       //-    近7日
+       article.lately 
+        ul
+         li
+          p 累计充值(元)
+          span 120545003.00
+         li
+          p 累计提款(元)
+          span 123.00
+         li
+          select.selected
+           option(value="7天") 7天
+           option(value="今天") 今天
+        .payUp
+         .dates 2017-10-30
+          img(src="../images/dade.png", alt="")
+         .payMsg
+          span 16:31:07
+          span 充值成功
+          span.oranges 11.22
+         .payMsg
+          span 16:31:07
+          span 充值成功
+          span.oranges 11.22
+         .btm -数据加载完毕-    
+        //-    充值
+       article.lately.none  
+        .pays
+         section
+          p 累计充值(元)
+          span 123.00
+         section
+          select.selected
+           option(value="7天") 7天
+           option(value="今天") 今天
+        .payUp
+         .dates 2017-10-30
+          img(src="../images/dade.png", alt="")
+         .payMsg
+          span 16:31:07
+          span 充值成功
+          span.oranges 11.22
+         .btm -数据加载完毕- 
+        //-   提款
+       article.lately.none   
+        .pays
+         section
+          p 累计充值(元)
+          span 123.00
+         section
+          select.selected
+           option(value="7天") 7天
+           option(value="今天") 今天
+        .payUp  
+         .dates 2017-10-30
+           img(src="../images/dade.png", alt="")
+         .payMsg
+           span 16:31:07
+           span 充值成功
+           span.oranges 11.22
+        .payUp  
+         .dates 2017-10-30
+           img(src="../images/dade.png", alt="")
+         .payMsg
+           span 16:31:07
+           span 充值成功
+           span.oranges 11.122  
+         .btm -数据加载完毕-    
+    script(src="../javascripts/f.js")

@@ -1,0 +1,103 @@
+section {
+    .nav_header {
+        // border: 1px solid red;
+        @include height(40px);
+        display: flex;
+        background: #f2f2f2;
+        >span {
+            flex: 1;
+            text-align: center;
+            &.active {
+                background: rgb(10, 33, 101);
+                color: #f2f2f2;
+            }
+        }
+    }
+    section {
+        // border: 1px solid red;
+        .lately {
+            ul {
+                text-align: center;
+                display: flex;
+                @extend .borders;
+                li {
+                    // border: 1px solid blue;
+                    flex: 1;
+                    padding: 10px 0;
+                    line-height: 1.2;
+                    >span {
+                        font-size: 18px;
+                    }
+                    .selected {
+                        @extend .selecteds;
+                    }
+                }
+            }
+            .payUp {
+                // border: 1px solid red;
+                .dates {
+                    @extend .borders;
+                    @extend .h30;
+                    img {
+                        height: 20px;
+                        width: 20px;
+                        vertical-align: middle;
+                        // outline: 1px solid red;
+                        float: left;
+                        margin-top: 10px;
+                    }
+                }
+                .payMsg {
+                    @extend .borders;
+                    @extend .h30;
+                    display: flex;
+                    >span {
+                        flex: 1;
+                        &:nth-last-child(1) {
+                            text-align: right;
+                        }
+                    }
+                }
+                .btm {
+                    @extend .h30;
+                    text-align: center;
+                }
+            }
+            .pays {
+                display: flex;
+                padding: 10px 0;
+                @extend .borders;
+                >section {
+                    flex: 1;
+                    text-align: center;
+                    >span {
+                        font-size: 18px;
+                    }
+                    .selected {
+                        @extend .selecteds;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.borders {
+    border-bottom: 1px solid #ccc;
+}
+
+.h30 {
+    @include height(40px);
+    padding: 0 10px;
+}
+
+.selecteds {
+    outline: none;
+    height: 30px;
+    width: 70px;
+    border-radius: 30px;
+    padding: 0 10px;
+}
+.none{
+    display: none;
+}

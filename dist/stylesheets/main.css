@@ -223,193 +223,114 @@ input[type=button] {
 }
 
 /*! Component 组件*/
-.loginPage {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -moz-box-orient: vertical;
-  -moz-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-.loginPage .logo {
-  width: 100%;
-  padding: 27px;
-}
-.loginPage .logo ul {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.loginPage .logo ul li img {
-  height: 3.75rem;
-}
-.loginPage .logo ul li a {
-  font-weight: 700;
-  color: #3083E7;
-  font-size: 1.875rem;
-  line-height: 3.75rem;
-  padding: 0 20px;
-}
-.loginPage .backLogin {
-  background: url("../images/bg.jpg") no-repeat center center;
-  min-height: 500px;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 50px;
-}
-.loginPage .backLogin .left {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -moz-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-.loginPage .backLogin .right {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -moz-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-.loginPage .backLogin .right .loginsLeft {
-  -webkit-box-flex: 2;
-  -webkit-flex: 2;
-  -moz-box-flex: 2;
-  -ms-flex: 2;
-  flex: 2;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox {
-  overflow: hidden;
-  width: 380px;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section {
-  padding: 30px;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section:nth-child(1) {
-  background: #ffffff;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section .warning {
-  color: red;
-  text-align: center;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabs {
-  line-height: 50px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabs span {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -moz-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  text-align: center;
-  cursor: pointer;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabs span.act {
-  border-bottom: 2px solid #3083E7;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .inputSel {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -webkit-flex-direction: row-reverse;
-  -moz-box-orient: horizontal;
-  -moz-box-direction: reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .inputSel input {
+section .nav_header {
   height: 40px;
-  width: 256px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  text-indent: 10px;
-  border: 0;
-  outline: 0;
-}
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .inputSel i {
-  width: 40px;
-  height: 40px;
-  text-align: center;
   line-height: 40px;
-  font-size: 30px;
-  margin-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #f2f2f2;
 }
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput .hide {
-  display: none;
+section .nav_header > span {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
 }
-.loginPage .backLogin .right .loginsLeft .loginBox section .tabsInput #codeBtn {
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  background: #fff;
+section .nav_header > span.active {
+  background: #0a2165;
+  color: #f2f2f2;
 }
-.loginPage .backLogin .right .loginsLeft .loginBox section .loginBtn {
-  width: 325px;
-  height: 45px;
-  color: #fff;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  background: #3083E7;
+section section .lately ul {
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
 }
-.loginPage .backLogin .right .loginsRight {
+section section .lately ul li {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px 0;
+  line-height: 1.2;
+}
+section section .lately ul li > span {
+  font-size: 18px;
+}
+section section .lately .payUp .dates img {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+  float: left;
+  margin-top: 10px;
+}
+section section .lately .payUp .payMsg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+section section .lately .payUp .payMsg > span {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -moz-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
-.loginPage .backLogin .right .loginsRight .qrCode {
-  height: 200px;
-  width: 200px;
+section section .lately .payUp .payMsg > span:nth-last-child(1) {
+  text-align: right;
 }
-.loginPage .backLogin .right .loginsRight .qrCode .imgCode {
-  height: 180px;
-  width: 180px;
-  outline: 1px solid blue;
-  margin: 0 auto;
-}
-.loginPage .backLogin .right .loginsRight .qrCode .qrCodeTxt {
-  font-size: 14px;
-  line-height: 30px;
+section section .lately .payUp .btm {
   text-align: center;
 }
-.loginPage .footer {
-  margin-bottom: 50px;
+section section .lately .pays {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 0;
 }
-.loginPage .footer p {
+section section .lately .pays > section {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   text-align: center;
-  line-height: 30px;
+}
+section section .lately .pays > section > span {
+  font-size: 18px;
+}
+
+.borders, section section .lately ul, section section .lately .payUp .dates, section section .lately .payUp .payMsg, section section .lately .pays {
+  border-bottom: 1px solid #ccc;
+}
+
+.h30, section section .lately .payUp .dates, section section .lately .payUp .payMsg, section section .lately .payUp .btm {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+}
+
+.selecteds, section section .lately ul li .selected, section section .lately .pays > section .selected {
+  outline: none;
+  height: 30px;
+  width: 70px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  padding: 0 10px;
+}
+
+.none {
+  display: none;
 }
