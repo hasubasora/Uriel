@@ -5,9 +5,7 @@ gutters:$susyGutters, //间隔
 gutter-position:inside //位置
 );
 @include border-box-sizing();
-
-/*清除UC默认*/
-
+//清除UC默认
 * {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -26,8 +24,23 @@ input[type="reset"],textarea {
 }
 
 
+//隐藏取消按钮
+::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+//隐藏放大镜
+::-webkit-search-results-button {
+    -webkit-appearance: none;
+}
+
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+//去除圆角
+input[type=search] {
+    -webkit-appearance: none;
 }
 
 html,
@@ -72,9 +85,9 @@ html span {
 a {
     text-decoration: none;
     color: #555;
-    &:active {
-        color: rgb(222, 222, 222);
-    }
+    // &:active {
+    //     color: rgb(222, 222, 222);
+    // }
 }
 
 button,
