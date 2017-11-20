@@ -1,0 +1,68 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link href="../stylesheets/main.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_398325_wd2b9a7fthvndn29.css"/>
+    <link rel="stylesheet" href="../framework/animate.css"/>
+    <script src="../framework/jq/zepto.min.js"></script>
+    <script src="../javascripts/filters.js">       </script>
+    <script src="../javascripts/login.js"></script>
+    <title>登录 | 云企商通</title>
+  </head>
+  <body>
+    <div class="containers loginPage">
+      <section class="logo">
+        <ul>
+          <li> <img src="../images/jjb.png" alt="" width="120px"/></li>
+          <li> <a>云企商通</a></li>
+          <li> <a>登录</a></li>
+        </ul>
+      </section>
+      <section class="backLogin">
+        <div class="left"></div>
+        <div class="right">
+          <div class="loginsLeft">
+            <div class="loginBox">
+              <section>
+                <div class="warning"> </div>
+                <div class="tabs"><span class="sl act">短信登录</span><span class="sr">密码登录</span></div>
+                <div class="tabsInput"> 
+                  <div class="inputSel">
+                    <input id="compNum" type="number" placeholder="企业号" maxLength="11"/><i class="iconfont icon-jigou_wushuju"></i>
+                  </div>
+                  <div class="inputSel">
+                    <input id="phone" type="tel" placeholder="手机号" maxLength="11"/><i class="iconfont icon-mobile"></i>
+                  </div>
+                  <div class="inputSel hide pwds bounceInLeft">
+                    <input id="pwd" type="password" placeholder="密码"/><i class="iconfont icon-mma"></i>
+                  </div>
+                  <div class="inputSel codes bounceInLeft">
+                    <input id="codeNum" type="text" placeholder="验证码"/>
+                    <input id="codeBtn" type="button" value="获取验证码" maxLength="11"/>
+                  </div>
+                </div>
+              </section>
+              <section class="nopadding">
+                <input class="loginBtn" type="button" value="登录"/>
+              </section>
+            </div>
+          </div>
+          <div class="loginsRight">
+            <div class="qrCode">
+              <div class="imgCode">二维码</div>
+              <p class="qrCodeTxt">云企商通App 扫一扫登录</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="footer">
+        <p>深圳市商沃科技发展有限公司   0755-88888888</p>
+        <p>地址：广东省广州市天河区天慧路3号C601</p>
+        <p>Copyright © 2015 Shenzhen Sunaw.Co All Rights Reserved.  ICP备案号：粤ICP备案14100294号​-1  版权所有：©商沃科技      </p>
+      </section>
+    </div>
+  </body>
+</html>

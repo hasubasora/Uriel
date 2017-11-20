@@ -36,12 +36,15 @@
                 11
             </div>
             <p>扫一扫上面二维码，加入我们的企业吧</p>
-            <p>邀请码:<i>999999999999</i> <span class="copys">复制</span> </p>
+            <p>邀请码:
+                <i>999999999999</i>
+                <span class="copys">复制</span>
+            </p>
             <textarea rows="" style="display:none" cols="">999999999999</textarea>
         </div>
     </div>
     <script type="text/javascript">
-        $(".copys").on("touchstart", function() {
+        $(".copys").on("touchstart", function () {
             $('textarea').select();
             document.execCommand("Copy");
             alert("复制成功!");
@@ -84,4 +87,21 @@
     let bb = "公鸡"
     bb.repeat(10);
     console.log(bb.repeat(10))
+    //Unicode
+    var atr = '吉'
+    console.info(atr.codePointAt())
+
+var url='http://192.168.168.46'
+    $.ajax({
+        type: "GET",
+        url: url+"/trade/CancelTrade",
+        data: {
+            'period': '23',
+            'wxId': '2'
+        },
+        dataType: "json",
+        success: function (data) {
+console.log(data)
+        }
+    })
 </script>
