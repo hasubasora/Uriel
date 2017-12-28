@@ -1,2 +1,7 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 // src/foo.js
-export default 'hello world!';
+exports.default = 'hello world!';

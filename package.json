@@ -34,6 +34,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-strip-debug": "^1.1.0",
     "gulp-uglify": "^2.1.2",
+    "gulp-webp": "^2.3.0",
     "jade": "^1.11.0",
     "jshint": "^2.9.4",
     "run-sequence": "^1.2.2"

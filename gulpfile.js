@@ -75,7 +75,7 @@ gulp.task('compass', () => {
                 'iOS 7',
                 'Firefox ESR',
                 'Explorer >= 8',
-                'Opera >= 42',
+                'Opera >= 40',
                 'Safari >= 8',
                 'last 5 FirefoxAndroid versions',
                 'last 5 ChromeAndroid versions',
@@ -103,6 +103,7 @@ gulp.task('minifyjs', () => {
         .pipe(babel({
             presets: ['es2015']
         }))
+        .pipe(gulp.dest('./dist/')) //整合后的输出路径        
         .pipe(concat('main.js')) //js代码合并 main.js
         .pipe(gulp.dest('./dist/javascripts/')) //整合后的输出路径
         .pipe(rename({
@@ -141,7 +142,7 @@ gulp.task('staticFiles', () => {
     return gulp.src([
             // './src/**/*.html',
             './src/images*/**/*.*',
-            './src/javascripts*/**/*.js',
+            // './src/javascripts*/**/*.js',
             // './src/stylesheets*/**/*.css',
             './src/framework*/**/*.*'
         ])

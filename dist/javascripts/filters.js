@@ -1,55 +1,60 @@
-const filter = {
+'use strict';
+
+var filter = {
     /** 将text中的html字符转义， 仅转义  ', ", <, > 四个字符
      * @param  { String } str 需要转义的字符串
      * @returns { String }     转义后的字符串 
      */
-    unhtml(str) {
-        return str ? str.replace(/[<">']/g, (a) => {
+    unhtml: function unhtml(str) {
+        return str ? str.replace(/[<">']/g, function (a) {
             return {
                 '<': '&lt;',
                 '"': '&quot;',
                 '>': '&gt;',
                 "'": '&#39;'
-            }[a]
+            }[a];
         }) : '';
     },
+
     /**
      * 匹配电话号码的正则
      * @param {String} tel 传入的电话号码
      * @param {String} reg 正则
      * @returns {bool} true false
      */
-    verificationPhone(tel, reg) {
+    verificationPhone: function verificationPhone(tel, reg) {
         return tel ? reg || /^0?1[3|4|5|7|8][0-9]\d{8}$/.test(tel) : '';
         // console.log(reg.test(tel))
     },
+
     /**
      * 去除多余空格
      * @param { String } str 需要去空格的字符串 
      */
-    unBlank(str) {
+    unBlank: function unBlank(str) {
         return str ? str.replace(/\s/ig, '') : '';
     },
+
     /**
      * 检查输入字符
      * @param char
      * @param reg
      */
-    character(char, reg) {
+    character: function character(char, reg) {
         return char ? reg || /[\{\}\[\]|、\\:;：；‘’\'\"“”\<\>?《》？，。、$*￥#~`!！@\%\^\…\&\*\(\)\_\+\-\=【】]/g.test(char) : '';
-
     },
+
     /**
      * 是否为表情包
      * @param {*} substring 
      */
-    isEmoji(substring) {
+    isEmoji: function isEmoji(substring) {
         for (var i = 0; i < substring.length; i++) {
             var hs = substring.charCodeAt(i);
             if (0xd800 <= hs && hs <= 0xdbff) {
                 if (substring.length > 1) {
                     var ls = substring.charCodeAt(i + 1);
-                    var uc = ((hs - 0xd800) * 0x400) + (ls - 0xdc00) + 0x10000;
+                    var uc = (hs - 0xd800) * 0x400 + (ls - 0xdc00) + 0x10000;
                     if (0x1d000 <= uc && uc <= 0x1f77f) {
                         return true;
                     }
@@ -68,20 +73,19 @@ const filter = {
                     return true;
                 } else if (0x3297 <= hs && hs <= 0x3299) {
                     return true;
-                } else if (hs == 0xa9 || hs == 0xae || hs == 0x303d || hs == 0x3030 ||
-                    hs == 0x2b55 || hs == 0x2b1c || hs == 0x2b1b ||
-                    hs == 0x2b50) {
+                } else if (hs == 0xa9 || hs == 0xae || hs == 0x303d || hs == 0x3030 || hs == 0x2b55 || hs == 0x2b1c || hs == 0x2b1b || hs == 0x2b50) {
                     return true;
                 }
             }
         }
     },
+
     /**
      * 倒计时
      * @param {*} codebtn 
      */
-    countDown(codebtn) {
-        let a = 60;
+    countDown: function countDown(codebtn) {
+        var a = 60;
         timer = setInterval(function () {
             if (a > 0) {
                 codebtn.attr("disabled", true).val("(" + a + ")倒计时").css("background", "#ccc");
@@ -92,28 +96,27 @@ const filter = {
                 a = 60;
             }
         }, 1000);
-
     },
-    countdowns(btn) {
-        let times = 60;
-        timer = setInterval(() => {
+    countdowns: function countdowns(btn) {
+        var times = 60;
+        timer = setInterval(function () {
             if (times > 0) {
                 btn.setAttribute('style', 'pointer-events: none');
-                filter.inputs(btn,`${times}s`);
+                filter.inputs(btn, times + 's');
                 times--;
             } else {
                 clearInterval(timer);
                 btn.removeAttribute('style');
-                filter.inputs(btn,'获取验证码');
+                filter.inputs(btn, '获取验证码');
                 times = 60;
             }
-        }, 1000)
+        }, 1000);
     },
-    inputs(btn,v1){
+    inputs: function inputs(btn, v1) {
         if (btn.tagName == 'INPUT') {
             btn.value = v1;
         } else if (btn.tagName == 'BUTTON') {
             btn.innerText = v1;
         }
     }
-}
+};

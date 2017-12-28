@@ -1,0 +1,253 @@
+@charset "UTF-8";
+
+/*代理规则*/
+
+.agency {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #4f0504;
+    height: 100%;
+    width: 100%;
+    .imgBg {
+        width: 100%;
+    }
+    .imgBtn {
+        position: absolute;
+        top: 25rem;
+        width: 15rem;
+        left: 4.2rem;
+    }
+}
+
+.agency .detailed_rules {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    color: #f5e585;
+    cursor: pointer;
+}
+
+.agency_min {
+    display: none;
+    position: absolute;
+    top: 5rem;
+    left: 2rem;
+    background: #2c1f43;
+    height: 20rem;
+    width: 19rem;
+    padding: 2rem 1rem 1rem;
+    word-wrap: break-word;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: #fff;
+    border: 2px solid #f6a998;
+    border-radius: 5px;
+    span {
+        color: #f6a998;
+        font-size: 1.5rem;
+        font-weight: 600;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+    .agency_min_glass {
+        overflow-y: scroll;
+        height: 16rem;
+    }
+}
+
+
+/*恭喜你
+*/
+
+.win_glass {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 8rem;
+    height: 9.7rem;
+}
+
+.winNum,
+.winImg,
+.winBtn {
+    position: absolute;
+}
+
+.winImg {
+    width: 100%;
+}
+
+.winNum {
+    top: 5rem;
+    z-index: 2;
+    font-size: 2.5rem;
+    color: rgb(251, 247, 189);
+    text-align: center;
+    width: 8rem;
+    text-shadow: 0 1px 1px #111;
+    font-weight: 600;
+}
+
+.winBtn {
+    bottom: 0rem;
+    width: 8rem;
+    height: 1.6rem;
+    z-index: 3;
+    cursor: pointer;
+}
+
+
+/*没钱弹窗*/
+
+.not_msg {
+    background: rgba(1, 1, 1, .6);
+    z-index: 8;
+    position: fixed;
+    top: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    .not_msg_glass {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 5px;
+        background: rgb(235, 235, 235);
+        height: 9rem;
+        padding: .5rem;
+        width: 9rem;
+        position: absolute;
+        left: .5rem;
+        top: 3rem;
+        .not_title {
+            text-align: center;
+            img {
+                width: 3rem;
+            }
+            .not_close {
+                color: rgb(179, 179, 179);
+                font-size: .8rem;
+                position: absolute;
+                top: .6rem;
+                right: .6rem;
+                cursor: pointer;
+            }
+        }
+        .not_content {
+            font-size: .8rem;
+            color: rgb(100, 100, 100);
+            text-align: left;
+            padding: 0 .5rem;
+        }
+        .not_btn_glass {
+            height: 1.5rem;
+            .not_btn {
+                border-radius: 5px;
+                background: rgb(255, 66, 66);
+                color: #fff;
+                width: 100%;
+                height: 100%;
+                font-size: .5rem;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// login
+$login_fontsize:rem(16);
+
+.n_login_box {
+    background: #eee;
+    width: rem(150);
+    margin: rem(25) auto;
+    padding: rem(10);
+    border-radius: 5px;
+    .n_login_title {
+        h3 {
+            font-weight: 600;
+            font-size: $login_fontsize/2;
+            color: #5c5c5c;
+            float: left;
+        }
+        .n_login_close {
+            height:rem(10);
+            width:rem(10);
+            display: inline-block;
+            cursor: pointer;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAAM1BMVEUAAACKioqKioqJiYmKioqKioqJiYmKioqKioqKioqJiYmJiYmKioqKioqJiYmKioqKioq1yrNjAAAAEHRSTlMASk9vVPp05e3z15yIYWE5QvTRXgAAAMFJREFUOMuFk9sOhCAMBVsEi7fd/v/XbmKa4HY09k0ZhwqncnS3Ik9VzPshzd2bPiB6roqfVe4tfpZYgogsop6gjPhHEkRkuj7of7sDuUL1gtR4N49fDBMt/KrSwt2VFprK6G9YYKKFp7ovsMAECyAg2K4H0WZ5rD2YDSvwRDLf+tEXBBDysnXkiTetMOGmkSdYkAJamKecwyl7YziRF+QJQ5JMAanTkkaKqSNkCSFkgo0IyUJLOpRVqrkNBKa1rd8fGfwbpyns5wsAAAAASUVORK5CYII=')no-repeat;
+            background-size: contain;
+            float: right;
+        }
+        @include clearfix;
+    }
+    .n_login_logo {
+        text-align: center;
+        margin-bottom: rem(10);
+        img {
+            width: rem(100)/2;
+            display: inline-block;
+        }
+    }
+    .n_login_content {
+        label {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: rem(5);
+            position: relative;
+            input {
+                @include wh(100%, rem(22));
+                line-height: rem(22);
+                border-radius: 5px;
+                text-indent: rem(5);
+                border: 1px solid #cccccc;
+                outline: 0;
+                font-size: $login_fontsize/2;
+            }
+            #n_login_cq_btn {
+                position: absolute;
+                background: rgba(0, 0, 0, 0);
+                right: rem(5);
+                top: rem(5.5);
+                color: #464646;
+                font-size: $login_fontsize/2;
+                cursor: pointer;
+            }
+        }
+    }
+    .n_login_red {
+        
+        color: #ff4242;
+    }
+    .n_login_blue {
+        color: #a2d9fa;
+        line-height: rem(16)/2;
+        font-size: rem(6);
+        margin-bottom: rem(5);
+    }
+}
+#n_login_submit {
+    @include wh(100%, rem(22));
+    background: #cccccc;
+    color: #fff;
+    border-radius: 5px;
+    font-size: $login_fontsize/2;
+    cursor: pointer;
+}
+.n_login_submit_red{
+    background: #ff4445 !important;
+}
+.scale {
+    transform: scale(0) !important;
+}
+.loginBox {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    transform: scale(1);
+    left: 0;
+    top: 0;
+    z-index: 888;
+}

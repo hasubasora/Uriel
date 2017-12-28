@@ -1,7 +1,9 @@
-window.onload = function(params) {
-    const shopPage = Vue.component('shopPage', {
+'use strict';
+
+window.onload = function (params) {
+    var shopPage = Vue.component('shopPage', {
         template: '#shopPage', //用什么模板来渲染他
-        data() {
+        data: function data() {
             return {
                 leftList: [{
                     title: '店铺',
@@ -22,15 +24,15 @@ window.onload = function(params) {
                         url: 'xxx'
                     }]
                 }]
-            }
+            };
         }
     });
-    const goodsListPage = Vue.component('goodsListPage', {
-        template: '#goodsListPage', //用什么模板来渲染他
+    var goodsListPage = Vue.component('goodsListPage', {
+        template: '#goodsListPage' //用什么模板来渲染他
     });
-    const shopHomePage = Vue.component('shopHomePage', {
+    var shopHomePage = Vue.component('shopHomePage', {
         template: '#shopHomePage', //用什么模板来渲染他
-        data() {
+        data: function data() {
             return {
                 shopList: [{
                     logoUrl: '',
@@ -88,38 +90,35 @@ window.onload = function(params) {
                         tit: '商品数量',
                         pic: '22222'
                     }]
-                }, ]
-            }
-        },
-    })
-    const categoryList = Vue.component('categoryList', {
-        template: '#categoryList', //用什么模板来渲染他
+                }]
+            };
+        }
+    });
+    var categoryList = Vue.component('categoryList', {
+        template: '#categoryList' //用什么模板来渲染他
     });
 
-    const routes = [{
-            path: '/shopHomePage',
-            component: shopHomePage,
-        },
-        {
-            path: '/goodsListPage',
-            component: goodsListPage,
-        },
-        {
-            path: '/shopPage',
-            component: shopPage,
-        },
-        { path: '/', redirect: '/shopHomePage' } //404
-    ]
-    const router = new VueRouter({
+    var routes = [{
+        path: '/shopHomePage',
+        component: shopHomePage
+    }, {
+        path: '/goodsListPage',
+        component: goodsListPage
+    }, {
+        path: '/shopPage',
+        component: shopPage
+    }, { path: '/', redirect: '/shopHomePage' //404
+    }];
+    var router = new VueRouter({
         // mode: 'history',
-        routes, // （缩写）相当于 routes: routes
-        linkActiveClass: 'linkActive', //激活后的连接颜色Class
+        routes: routes, // （缩写）相当于 routes: routes
+        linkActiveClass: 'linkActive' //激活后的连接颜色Class
 
-    })
-    const app = new Vue({
+    });
+    var app = new Vue({
         el: '#container',
-        router,
-        data() {
+        router: router,
+        data: function data() {
             return {
                 apply: [{
                     name: '首页',
@@ -131,8 +130,7 @@ window.onload = function(params) {
                     name: '店铺管理',
                     url: "/shopPage"
                 }]
-            }
-        },
-    })
-
-}
+            };
+        }
+    });
+};
