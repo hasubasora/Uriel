@@ -1,0 +1,96 @@
+.complain_div {
+    h5 {
+        font-size: .5rem;
+        color: rgb(143, 143, 143);
+        line-height: 1.25rem;
+        height: 1.25rem;
+        padding: 0 .5rem;
+    }
+    ul {
+        li {
+            line-height: 1.25rem;
+            height: 1.25rem;
+            padding: 0 .5rem;
+            background: #fff;
+            border-bottom: 1px solid rgb(240, 240, 240);
+        }
+    }
+    h4 {
+        color: #333333;
+    }
+}
+
+.complain_div_3 {
+    .complain_input {
+        line-height: 1.25rem;
+        height: 1.25rem;
+        padding: 0 .5rem;
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: .5rem;
+    }
+    .complain_text {
+        line-height: .7rem;
+        height: 5rem;
+        padding: .5rem;
+        width: 100%;
+        resize: none;
+        border: none;
+        outline: none;
+        font-size: .5rem;
+    }
+    h4 {
+        padding: .5rem;
+        line-height: .6rem;
+        font-size: .5rem;
+    }
+    .button {
+        @include height(1.5rem);
+        width: 9rem;
+        background: #FF4445;
+        color: #fff;
+        margin-left: .5rem;
+ 
+        font-size: .5rem;
+        border-radius: 5px;
+        margin-bottom: .5rem;
+    }
+}
+
+.complain_div_4 {
+    background: #fff;
+    height: 15rem;
+    img {
+        height: 3rem;
+        width: 3rem;
+        margin: 3rem 3.5rem .5rem;
+    }
+    h4 {
+        font-size: .5rem;
+        text-align: center;
+        margin-bottom: .5rem;
+    }
+    h5 {
+        font-size: .4rem;
+        line-height: 0.6rem;
+        a {
+            color: #097cff;
+        }
+    }
+    .button{
+        @include height(1.5rem);
+        width: 9rem;
+        background: #FF4445;
+        color: #fff;
+        margin-left: .5rem;
+    
+        font-size: .5rem;
+        border-radius: 5px;
+        margin-bottom: .5rem;
+        margin-top: 1rem;
+    }
+}
+.none{
+    display: none;
+}

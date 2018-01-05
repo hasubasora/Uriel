@@ -76,23 +76,23 @@ $legacy-support-for-ie:true;
 }
 
 @mixin btn-success {
-    background: rgb(168, 255, 96);
-    color: rgb(255, 255, 255);
+    background: $green;
+    color: $fontColor;
 }
 
 @mixin btn-warning {
-    background: rgb(252, 224, 116);
-    color: rgb(255, 255, 255);
+    background: $yellow;
+    color: $fontColor;
 }
 
 @mixin btn-info {
-    background: rgb(121, 157, 251);
-    color: rgb(255, 255, 255);
+    background: $blue;
+    color: $fontColor;
 }
 
 @mixin btn-error {
-    background: rgb(255, 100, 100);
-    color: rgb(255, 255, 255);
+    background: $red;
+    color: $fontColor;
 }
 
 @mixin text($h:2.5rem, $w:15rem) {

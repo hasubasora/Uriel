@@ -20,14 +20,19 @@ $big: 1180px;
 
 /*常用颜色*/
 
-$fontFamily:"黑体";
-$bgcolor:#fff #f9f9f9 #f8f8f8;
+$fontFamily:"微软雅黑";
+$fontSize:16px;
+$fontColor:#fff;
+//背景
+$bgcolor:#fff;
 $color: red;
-$green:#10aa71 #B3E7C1 #90dda5;
-$red:#E4433D #DD9090;
-$blue:#2086d7;
+$green:#10aa71;
+$red:#E4433D;
+$blue:#148bec;
 $orange:#ec7c27;
-$black:#2B3A42;
+$black:#333;
+$gray:#ccc;
+$yellow:rgb(252, 224, 116);
 //
 $size:1600px 1280px 1080px 960px 320px;
 //清楚浮动
@@ -46,6 +51,10 @@ $size:1600px 1280px 1080px 960px 320px;
     top: -10px;
 }
 
+%bo{
+    outline: none;
+    border: none;
+}
 
 /**
     lighten(#cc3, 10%) // #d6d65c

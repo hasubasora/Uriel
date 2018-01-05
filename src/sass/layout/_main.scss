@@ -8,41 +8,14 @@ gutter-position:inside //位置
 
 /*清除UC默认*/
 
-* {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-// 清除苹果样式
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none !important;
-    margin: 0;
-}
-
-input[type="select"],
-input[type="radio"],
-input[type="checkbox"],
-input[type="submit"],
-input[type="reset"],
-textarea {
-    -webkit-appearance: none;
-    appearance: none;
-    outline: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
 html,
 body {
     font-family: $fontFamily;
-    font-size: 100%;
-    font-size: 16px;
+    font-size: $fontSize;
     width: 100%;
-    height: auto; // background: nth($bgcolor, 1);
-    user-select: none;//禁止选中文字
+    height: auto;
+    background: $bgcolor;
+    user-select: none; //禁止选中文字
 }
 
 html *,
@@ -72,26 +45,57 @@ html span {
     display: flex;
 }
 
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// 清除苹果样式
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   appearance: none !important;
+    margin: 0;
+}
+
+select {
+    outline: none;
+    appearance: none;
+    border: solid 1px $gray;
+}
+
+input[type="select"],
+input[type="radio"],
+input[type="checkbox"],
+input[type="submit"],
+input[type="reset"],
+textarea {
+    appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    @extend %bo;
+}
+
+input[type="number"] {
+    appearance: textfield;
+    @extend %bo;
+}
+
 // @include box-shadow(0px 1px 1px 0px #333);
 a {
     text-decoration: none;
-    color: #555;
-    &:active {
-        color: rgb(222, 222, 222);
-    }
+    color: $black;
 }
 
 button,
 input[type=button] {
-    outline: none;
-    border: none;
     cursor: pointer;
+    @extend %bo;
 }
 
 .scale {
-    transform: scale(0)!important
+    transform: scale(1);
 }
-
 .none {
     display: none;
+}
+.pointer{
+    cursor: pointer;
 }
