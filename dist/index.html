@@ -42,39 +42,61 @@
 <button onclick="stop()">Click me to stop!</button>
 <div id="animated">Hello there.</div>
 
-
+<div id="test" style="width:1px;height:17px;background:#0f0;">0%</div>
+<input type="button" value="Run" id="run"/>
 
 
 <script>
-    var requestId = 0;
+    window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+var start = null;
+var ele = document.getElementById("test");
+var progress = 0;
+
+function step(timestamp) {
+    progress += 1;
+    ele.style.width = progress + "%";
+    ele.innerHTML=progress + "%";
+    if (progress < 100) {
+        requestAnimationFrame(step);
+    }
+}
+requestAnimationFrame(step);
+document.getElementById("run").addEventListener("click", function() {
+    ele.style.width = "1px";
+    progress = 0;
+    requestAnimationFrame(step);
+}, false);
+    // var requestId = 0;
     
-    function animate(time) {
-        document.getElementById("animated").style.left =
-        (time - animationStartTime) % 2000 / 4 + "px";
-        requestId = window.requestAnimationFrame(animate);
-    }
-    function start() {
-        animationStartTime = window.performance.now();
-        requestId = window.requestAnimationFrame(animate);
-    }
-    function stop() {
-        if (requestId)
-        window.cancelAnimationFrame(requestId);
-        requestId = 0;
-    }
+    // function animate(time) {
+    //     console.log(time)
+    //     console.log(animationStartTime)
+    //     document.getElementById("animated").style.left =
+    //     (time - animationStartTime) % 2000 / 4 + "px";
+    //     requestId = window.requestAnimationFrame(animate);
+    // }
+    // function start() {
+    //     animationStartTime = window.performance.now();
+    //     requestId = window.requestAnimationFrame(animate);
+    // }
+    // function stop() {
+    //     if (requestId)
+    //     window.cancelAnimationFrame(requestId);
+    //     requestId = 0;
+    // }
 
 
 
-   var  arr=[10,1,2,3,4,5,6,7,8,9]
-   var  arr2='[10,6,4]'
+//    var  arr=[10,1,2,3,4,5,6,7,8,9]
+//    var  arr2='[10,6,4]'
 
-   arr.forEach(el => {
+//    arr.forEach(el => {
    
-   console.log('weizhi'+ arr2.indexOf(el))
-   console.log( el)
+//    console.log('weizhi'+ arr2.indexOf(el))
+//    console.log( el)
 //    console.log( arr2.match(/\d/))
     
-   });
+//    });
 </script>
 
 
